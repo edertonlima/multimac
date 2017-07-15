@@ -1,0 +1,43 @@
+.header {
+	width: 100%;
+	@include clear;
+
+	h1 {
+		float: left;
+	}
+
+	.box-menu {
+		float: right;
+		height: 34px;
+		padding: 25px 0;
+	}
+
+	.info-header {
+		display: block;
+		width: 100%;
+		padding: 3px 0;
+		border-top: 1px solid $borda;
+		@include clear;
+
+		.contato-header {
+			width: auto;
+			display: inline-block;
+
+			.tel {
+				display: inline-block;
+				margin-right: 10px; 
+				font-weight: $light;
+				color: $azul-escuro;
+				font-size: .75rem;
+
+				.fa {
+					color: $azul-escuro;
+					font-size: 1rem;
+					position: relative;
+					top: 2px;
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+}
