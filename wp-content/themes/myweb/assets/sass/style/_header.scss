@@ -22,6 +22,7 @@
 		.contato-header {
 			width: auto;
 			display: inline-block;
+			line-height: 34px;
 
 			.tel {
 				display: inline-block;
@@ -35,8 +36,21 @@
 					font-size: 1rem;
 					position: relative;
 					top: 2px;
-					margin-right: 5px;
+					margin-right: 3px;
 				}
+			}
+		}
+
+		.orcamento-header {
+			float: right;
+
+			.carrinho {
+				width: 30px;
+				height: 28px;
+				background: url('../images/ico_carrinho.png') no-repeat;
+				float: left;
+				margin: 2px 0 0 10px;
+				cursor: pointer;
 			}
 		}
 	}

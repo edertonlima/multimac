@@ -132,6 +132,17 @@
 </head>
 <body <?php body_class(); ?>>
 
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.10&appId=1806184732950369";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
 	<header class="header">
 		<div class="container">
 			<h1>
@@ -186,7 +197,10 @@
 							<span class="tel"><i class="fa fa-whatsapp" aria-hidden="true"></i> 14 99710-6385</span>
 						</div>
 
-						<a href="javascript:" class="button" title="Solicite um Oraçamento">Solicite um Oraçamento</a>
+						<div class="orcamento-header">
+							<a href="javascript:" class="button orcamento" title="Solicite um Oraçamento">Solicite um Oraçamento</a>
+							<span class="carrinho"></span>
+						</div>
 					</div>
 				</div>
 			</div>

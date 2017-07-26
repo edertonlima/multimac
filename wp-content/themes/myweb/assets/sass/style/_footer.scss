@@ -1,8 +1,16 @@
 .footer {
-	height: 50px;
-	background-color: $dourado;
+	background-color: $azul-petroleo;
 	width: 100%;
-	line-height: 50px;
+	padding: 40px 0;
+	color: #ffffff;
+	font-size: 1rem;
+	font-weight: $light;
+
+	.logo-footer {
+		margin-bottom: 30px;
+		display: block;
+		max-width: 100%;
+	}
 
 	.copy {
 		float: left;
@@ -10,12 +18,77 @@
 		font-size: .625rem;
 	}
 
-	.di20 {
-		float: right;
+	.box-footer {
+		margin-top: 30px;
+		color: #ffffff;
+		font-size: 1rem;
+		font-weight: $light;
 
-		img {
-			position: relative;
-			top: 4px;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	.contato-footer {
+		width: auto;
+		display: inline-block;
+		line-height: 34px;
+		font-size: 1rem;
+		color: #ffffff;
+
+		.tel {
+			display: inline-block;
+			margin-right: 10px; 
+			color: #ffffff;
+			font-size: 1rem;
+			line-height: normal;
+			font-weight: $light;
+
+			.fa {
+				color: #ffffff;
+				position: relative;
+				top: 2px;
+				margin-right: 3px;
+				font-size: 1.225rem;
+			}
+		}
+
+		.email {
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
+
+	strong {
+		font-size: 1.125rem;
+		color: #ffffff;
+		display: block;
+	}
+
+	ul {
+		display: block;
+		
+		li {
+			display: block;
+			margin-top: 5px;
+
+			&:first-child {
+				margin-top: 0px;
+			}
+
+			&.separado {
+				margin-top: 25px;
+			}
+
+			a {
+				color: #ffffff;
+				@include animacao;
+
+				&:hover {
+					opacity: .5;
+					text-decoration: none;
+				}
+			}
 		}
 	}
 }
