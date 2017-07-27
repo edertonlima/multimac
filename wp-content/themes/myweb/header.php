@@ -198,7 +198,7 @@
 						</div>
 
 						<div class="orcamento-header">
-							<a href="javascript:" class="button orcamento" title="Solicite um Oraçamento">Solicite um Oraçamento</a>
+							<a href="javascript:" class="button orcamento diagonal" title="Solicite um Orçamento"><span>Solicite um Orçamento</span></a>
 							<span class="carrinho"></span>
 						</div>
 					</div>

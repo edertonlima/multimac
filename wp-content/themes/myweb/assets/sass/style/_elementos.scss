@@ -17,15 +17,18 @@ h1 {
 }
 
 h2 {
-	font-size: 3rem;
+	font-size: 2.812rem;
 	line-height: 3rem;
-	font-weight: $bold;
+	font-weight: $regular;
+	color: $azul-petroleo;
+	display: block;
+	text-align: center;
 }
 
 h3 {
-	font-size: 1.75rem;
-	line-height: 1.8rem;
-	font-weight: $bold;
+	font-size: 1.225rem;
+	line-height: 1.5rem;
+	font-weight: $regular;
 }
 
 h4 {
@@ -49,7 +52,26 @@ p {
 		font-size: 1rem;
 		line-height: 1.25rem;
 	}
-	
+
+	&.sub-tit {
+		font-size: 1.125rem;
+		line-height: 28px;
+		font-style: italic;
+		display: block;
+		margin-top: 20px;
+	}
+
+	a {
+		color: $azul-claro;
+		text-decoration: underline;
+		font-weight: $light;
+		@include animacao;
+
+		&:hover {
+			color: $azul-petroleo;
+		}
+	}
+
 	@media all and (max-width: 770px){
 		font-size: 1.25rem;
 		line-height: (1.25rem)+.5;

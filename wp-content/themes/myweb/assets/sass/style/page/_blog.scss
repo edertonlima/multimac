@@ -1,0 +1,49 @@
+.list-blog {
+	.item-blog {
+		float: left;
+		padding: 7.5px;
+		width: 33.333%;
+
+		img {
+			display: block;
+			width: 100%;
+		}
+
+		.cont-blog {
+			border: 1px solid #d1d1d2;
+			border-top: 0;
+			display: block;
+			padding: 10px;
+			@include animacao;
+
+			h3 {
+				margin-bottom: 15px;
+
+				a {
+					color: $azul-petroleo;
+					font-size: 1.875rem;
+					line-height: 2rem;
+					text-decoration: none;
+					@include animacao;
+
+					&:hover {
+						color: $azul-claro;
+					}
+				}
+			}
+
+			p {
+				font-style: italic;
+				font-weight: $light;
+				font-size: 1.125rem;
+				line-height: 1.5rem;
+			}
+		}
+
+		&:hover {
+			.cont-blog {
+				background-color: #ffffff;
+			}
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.box-sistemas {
+	background-position: center;
+	background-size: cover;
+	border-top: 35px solid $cinza;
+
+	h2, p, a {
+		float: right;
+		@include clear;
+	}
+
+	h2, p {
+		max-width: 440px;
+		width: 100%;
+		color: #ffffff;
+		text-align: left;
+	}
+}

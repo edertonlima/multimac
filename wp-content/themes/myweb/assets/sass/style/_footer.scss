@@ -82,6 +82,7 @@
 
 			a {
 				color: #ffffff;
+				font-weight: $light;
 				@include animacao;
 
 				&:hover {

@@ -1,0 +1,62 @@
+.list-segmentos {
+	margin-top: 50px;
+	
+	li {
+		padding: 2.5px;
+		width: 25%;
+		float: left;
+		@include box-sizing;
+
+		&:nth-child(n+1){
+			a {
+				background-color: $azul-petroleo;
+
+				&:hover {
+					background-color: darken($azul-petroleo,15%);
+				}
+			}
+		}
+
+		&:nth-child(2n+2){
+			a {
+				background-color: $azul-bb;
+
+				&:hover {
+					background-color: darken($azul-bb,15%);
+				}
+			}
+		}
+
+		&:nth-child(2n+3){
+			a {
+				background-color: $azul-claro;
+
+				&:hover {
+					background-color: darken($azul-claro,15%);
+				}
+			}
+		}
+
+		a {
+			display: block;
+			overflow: hidden;
+			padding: 52px 22px 25px;
+			text-decoration: none;
+			@include animacao;
+		}
+
+		img {
+			display: block;
+			margin: 0px auto 20px;
+			width: 100%;
+			max-width: 150px;
+		}
+
+		h3 {
+			color: #ffffff;
+			display: block;
+			text-align: center;
+			min-height: 48px;
+		}
+	}
+}

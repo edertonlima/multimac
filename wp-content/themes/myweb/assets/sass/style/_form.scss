@@ -22,7 +22,6 @@ button, input[type='submit'], .button {
 	font-weight: $regular;
 	font-size: .937rem;
 	text-align: center;
-	border-radius: 5px 0 0 5px;
 	display: inline-block;
 	font-style: italic;
 	@include animacao;
@@ -54,7 +53,81 @@ button, input[type='submit'], .button {
 		width: auto;
 		background-color: $azul;
 		color: #ffffff;
-		border-radius: 7px 0;
+		border-radius: 10px 0;
+		font-style: normal;
+
+		&:hover {
+			background-color: darken($azul,15%);
+			text-decoration: none;
+		}
+	}
+
+	&.ajuda {
+		height: 70px;
+		line-height: 70px;
+		background-color: $azul;
+		color: #ffffff;
+		border-radius: 10px 0;
+		font-size: 1.562rem;
+		width: 300px;
+		margin: 75px auto 0;
+		display: block;
+		font-style: normal;
+
+		&:hover {
+			background-color: darken($azul,15%);
+			text-decoration: none;
+		}
+	}
+
+	&.btn-sistemas {
+		height: 70px;
+		line-height: 70px;
+		background-color: $azul;
+		color: #ffffff;
+		border-radius: 10px 0;
+		font-size: 1.562rem;
+		width: 200px;
+		margin: 75px auto 0;
+		display: block;
+		font-style: normal;
+
+		&:hover {
+			background-color: darken($azul,15%);
+			text-decoration: none;
+		}
+	}
+
+	&.button-slide {
+		padding: 0 50px;
+		height: 70px;
+		line-height: 70px;
+		background-color: $azul;
+		color: #ffffff;
+		border-radius: 10px 0;
+		font-size: 1.25rem;
+		width: auto;
+		margin: 70px 0 0;
+		display: inline-block;
+		float: left;
+		font-style: normal;
+		@include clear;
+
+		&:hover {
+			background-color: darken($azul,15%);
+			text-decoration: none;
+		}
+	}
+
+	&.diagonal {
+		transform: skew(-10deg);
+
+		span {
+			transform: skew(10deg);
+			display: block;
+			color: #ffffff;
+			font-style: italic;
+		}
 	}
 }
 
@@ -125,6 +198,7 @@ form {
 			line-height: 18px;
 			width: 100%;
 			margin: 0px;
+			font-weight: $light;
 		}
 
 		button {
@@ -137,8 +211,14 @@ form {
 			line-height: 22px;
 			background-color: #fff;
 
+			.fa {
+				@include animacao;
+			}
+
 			&:hover {
-				color: $azul;
+				.fa {
+					color: $azul-claro;
+				}
 			}
 		}
 	}
