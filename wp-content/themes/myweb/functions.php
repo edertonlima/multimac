@@ -154,9 +154,7 @@ function paginacao() {
         }
 }
 
-
-/* NOVOS POST TYPES */
-// PRODUTOS
+/*
 add_action( 'init', 'create_post_type_produto' );
 function create_post_type_produto() {
 
@@ -225,8 +223,89 @@ function create_taxonomy_categoria_produto() {
         )
     );
 }
+*/
 
+// equipamentos
+add_action( 'init', 'equipamento' );
+function equipamento() {
+	$singular = 'Equipamento';
+	$plural = 'Equipamentos';
+	$singular_min = 'equipamento';
+	$plural_min = 'equipamentos';
 
+	$labels = array(
+		'name' => _x($plural, 'post type general name'),
+		'singular_name' => _x($singular, 'post type singular name'),
+		'add_new' => _x('Adicionar novo '.$singular, 'Produto'),
+		'add_new_item' => __('Addicionar novo '.$singular),
+		'edit_item' => __('Editar '.$singular),
+		'new_item' => __('Novo '.$singular),
+		'all_items' => __('Todos as '.$plural),
+		'view_item' => __('Visualizar '.$singular),
+		'search_items' => __('Procurar '.$singular),
+		'not_found' =>  __('Nenhum '.$singular_min.' Encontrado.'),
+		'not_found_in_trash' => __('Nenhum '.$singular_min.' encontrado na lixeira.'),
+		'parent_item_colon' => '',
+		'menu_name' => $plural
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'has_archive' => true,
+		'hierarchical' => false,
+		'menu_position' => null,
+		'menu_icon' => 'dashicons-tag',
+		'supports' => array('title','excerpt')
+	  );
+
+	register_post_type( $plural_min, $args );
+}
+
+// seguimentos
+add_action( 'init', 'seguimento' );
+function seguimento() {
+	$singular = 'Seguimento';
+	$plural = 'Seguimentos';
+	$singular_min = 'seguimento';
+	$plural_min = 'seguimentos';
+
+	$labels = array(
+		'name' => _x($plural, 'post type general name'),
+		'singular_name' => _x($singular, 'post type singular name'),
+		'add_new' => _x('Adicionar novo '.$singular, 'Produto'),
+		'add_new_item' => __('Addicionar novo '.$singular),
+		'edit_item' => __('Editar '.$singular),
+		'new_item' => __('Novo '.$singular),
+		'all_items' => __('Todos as '.$plural),
+		'view_item' => __('Visualizar '.$singular),
+		'search_items' => __('Procurar '.$singular),
+		'not_found' =>  __('Nenhum '.$singular_min.' Encontrado.'),
+		'not_found_in_trash' => __('Nenhum '.$singular_min.' encontrado na lixeira.'),
+		'parent_item_colon' => '',
+		'menu_name' => $plural
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true,
+		'show_in_menu' => true,
+		'rewrite' => true,
+		'capability_type' => 'post',
+		'has_archive' => true,
+		'hierarchical' => false,
+		'menu_position' => null,
+		'menu_icon' => 'dashicons-tag',
+		'supports' => array('title','excerpt')
+	  );
+
+	register_post_type( $plural_min, $args );
+}
 
 
 

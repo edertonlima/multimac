@@ -1,38 +1,41 @@
 .list-segmentos {
 	margin-top: 50px;
+	text-align: center;
 	
 	li {
 		padding: 2.5px;
 		width: 25%;
-		float: left;
+		display: inline-block;
+		border-radius: 40px;
+		overflow: hidden;
 		@include box-sizing;
 
-		&:nth-child(n+1){
+		&.cor1 {
 			a {
 				background-color: $azul-petroleo;
 
 				&:hover {
-					background-color: darken($azul-petroleo,15%);
+					background-color: darken($azul-petroleo,5%);
 				}
 			}
 		}
 
-		&:nth-child(2n+2){
+		&.cor2{
+			a {
+				background-color: $azul;
+
+				&:hover {
+					background-color: darken($azul,5%);
+				}
+			}
+		}
+
+		&.cor3{
 			a {
 				background-color: $azul-bb;
 
 				&:hover {
-					background-color: darken($azul-bb,15%);
-				}
-			}
-		}
-
-		&:nth-child(2n+3){
-			a {
-				background-color: $azul-claro;
-
-				&:hover {
-					background-color: darken($azul-claro,15%);
+					background-color: darken($azul-bb,5%);
 				}
 			}
 		}
@@ -59,4 +62,323 @@
 			min-height: 48px;
 		}
 	}
+}
+
+.seguimentos {
+	.header-post {
+		background-size: cover;
+		background-position: center;
+
+		h2 {
+			padding: 150px 0 20px;
+			color: $tit-escuro;
+			font-size: 4rem;
+			text-decoration: none;
+			text-align: left;
+			text-shadow: 1px 1px 1px #ffffff;
+		}
+	}
+
+	.subtitulo {
+		color: $tit-escuro;
+		font-size: 1.3rem;
+		line-height: 1.5rem;
+		display: block;
+		font-style: italic;
+
+		&.margin-top {
+			margin-top: 20px;
+		}
+
+		&.margin-bottom {
+			margin-bottom: 100px;
+		}
+
+		&.destaque {
+			font-size: 1.8rem;
+			line-height: 2rem;
+			font-weight: $light;
+		}
+	}
+
+	.passos, .button-inicio {
+		margin-bottom: 30px;
+	}
+
+	.passos {
+		float: left;
+		width: 75%;
+
+		p {
+			color: $azul-petroleo;
+			font-size: 1rem;
+			font-weight: $bold;
+			display: block;
+			margin-bottom: 30px;
+		}
+
+		.itens {
+			width: 100%;
+			display: block;
+
+			li {
+				padding-right: 25px;
+				vertical-align: top;
+				display: table;
+				float: left;
+				margin-bottom: 20px;
+
+				img, span {
+					display: table-cell;
+				}
+
+				img {
+					vertical-align: top;
+				}
+
+				span {
+					color: $cor-txt;
+					font-size: 1rem;
+					line-height: 1rem;
+					font-weight: $light;
+					font-style: italic;
+					width: 170px;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+
+	.button-inicio {
+		float: right;
+		width: 25%;
+
+		.tit-button {
+			color: $azul;
+			font-size: 2.1rem;
+			font-style: italic;
+			display: block;
+		}
+
+		a {
+			margin-top: 10px;
+			display: inline-block;
+		}
+	}
+
+	.box-etapas {
+		.subtitulo {
+			color: $azul-petroleo;
+			font-style: normal;
+
+			&.margin-top-mini {
+				margin-top: 20px;
+			}
+
+			&.margin-top {
+				margin-top: 95px;
+			}
+		}
+
+		.button-etapa {
+			margin-top: 90px;
+			text-align: center;
+			display: block;
+			width: 100%;
+
+			.tit-button {
+				font-size: 1.3rem;
+				color: $azul-petroleo;
+				margin-bottom: 10px;
+				display: block;
+			}
+
+			.button {
+				float: none;
+				margin: 0 auto;
+				display: block;
+			}
+		}
+
+		&.sistemas {
+			.item-sistema {
+				.tit-sistema {
+					color: $tit-claro;
+					font-size: 1.225rem;
+					font-style: italic;
+					font-weight: $light;
+					display: block;
+					text-align: center;
+					margin-bottom: 30px;
+				}
+
+				ul {
+					width: 100%;
+					display: block;
+					text-align: center;
+
+					li {
+						display: inline-block;
+						width: 100px;
+						margin-right: 50px;
+
+						&:last-child {
+							margin-right: 0px;
+						}
+
+						img {
+							width: 100%;
+						}
+
+						img, span {
+							display: block;
+						}
+
+						span {
+							margin-top: 20px;
+							font-size: 1rem;
+							line-height: 1.2rem;
+							text-align: center;
+						}
+					}
+
+					&.list-sistemas {
+						li {
+							width: 170px;
+						}
+					}
+				}
+			}
+		}
+
+		&.suporte {
+			.img-suporte {
+				display: block;
+				margin: 15px auto 0;
+			}
+		}
+
+		&.etapa-fim {
+			.subtitulo {
+				margin-top: 15px;
+
+				&.destaque {
+					margin-top: 80px;
+				}
+			}
+
+			.button-etapa {
+				margin-top: 0;
+
+				.tit-button {
+					color: $azul;
+					text-transform: uppercase;
+					margin-bottom: 80px;
+					font-size: 1rem;
+					letter-spacing: 4px;
+				}
+
+				.button {
+					display: inline-block;
+					margin: 0 60px 0 0;
+
+					&:last-child {
+						margin-right: 0px;
+					}
+				}
+			}
+		}
+
+		.content-txt {
+			max-width: 780px;
+			margin: 100px auto 0;
+
+			p {
+				font-size: 1rem;
+				text-align: center;
+			}
+		}
+
+		.slide-item-cor {
+			width: 100%;
+			padding: 0px 30px;
+			margin: 30px 0 0;
+			position: relative;
+			@include box-sizing;
+
+			.item {
+				width: 100px !important;
+				box-sizing: content-box;
+
+				a {
+					text-decoration: none;
+
+					img {
+						display: block;
+						margin: 0 auto 10px;
+					}
+
+					span {
+						font-size: 1rem;
+						line-height: 1.2rem;
+						color: #ffffff;
+						display: block;
+						text-align: center;
+						@include animacao;
+					}
+
+					&:hover {
+						span {
+							color: $azul-petroleo;
+						}
+					}
+				}
+			}
+
+			.owl-item {
+				float: left;
+			}
+
+			.owl-stage-outer {
+				overflow: hidden;
+			}
+
+			.owl-nav {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				width: 100%;
+				height: 1px;
+
+				.owl-prev, .owl-next {
+					position: absolute;
+					top: 0;
+					margin-top: -16px;
+					height: 32px;
+					width: 19px;
+					text-indent: -10000px;
+					cursor: pointer;
+					@include animacao;
+
+					&:hover {
+						opacity: .5;
+					}
+				}
+
+				.owl-prev {
+					background: url('../images/ico_seta-esq.png') no-repeat;
+					left: -15px;
+				}
+
+				.owl-next  {
+					background: url('../images/ico_seta-dir.png') no-repeat;
+					right: -15px;
+				}
+			}
+		}
+	}
+}
+
+#equipamentos, #sistemas, #suporte_tecnico, #parabens {
+	//display: none;
 }

@@ -37,7 +37,7 @@
 											$txt_link = 'Clique Aqui'; }
 										 ?>
 
-										<a href="<?php the_sub_field('link_slideHome','option'); ?>" title="<?php echo $txt_link; ?>" class="button button-slide diagonal"><span><?php echo $txt_link; ?></span></a>
+										<a href="<?php the_sub_field('link_slideHome','option'); ?>" title="<?php echo $txt_link; ?>" class="button button-slide"><span><?php echo $txt_link; ?></span></a>
 
 									<?php } ?>									
 								</div>
@@ -70,14 +70,14 @@
 		<p class="sub-tit center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod eget mi at lobortis.<br>Quisque ullamcorper felis vestibulum dictum.</p>
 
 		<ul class="list-segmentos">
-			<li><a href="javascript:" title="Supermercados"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-supermercado.png" alt="Supermercados"><h3>Supermercados</h3></a></li>
-			<li><a href="javascript:" title="Bares"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-bares.png" alt="Bares"><h3>Bares</h3></a></li>
-			<li><a href="javascript:" title="Mercearias"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-mercearias.png" alt="Mercearias"><h3>Mercearias</h3></a></li>
-			<li><a href="javascript:" title="Padarias"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-padarias.png" alt="Padarias"><h3>Padarias</h3></a></li>
-			<li><a href="javascript:" title="Delivery"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-default.png" alt="Delivery"><h3>Delivery</h3></a></li>
-			<li><a href="javascript:" title="Casa de Carnes"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-default.png" alt="Casa de Carnes"><h3>Casa de Carnes</h3></a></li>
-			<li><a href="javascript:" title="Fast Food"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-default.png" alt="Fast Food"><h3>Fast Food</h3></a></li>
-			<li><a href="javascript:" title="Calçados e Confecções"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-default.png" alt="Calçados e Confecções"><h3>Calçados e Confecções</h3></a></li>
+			<?php /*<li class="cor1"><a href="javascript:" title="Supermercados"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-supermercado.png" alt="Supermercados"><h3>Supermercados</h3></a></li>
+			<li class="cor2"><a href="javascript:" title="Bares"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-bares.png" alt="Bares"><h3>Bares</h3></a></li>
+			<li class="cor3"><a href="javascript:" title="Mercearias"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-mercearias.png" alt="Mercearias"><h3>Mercearias</h3></a></li> */?>
+			<li class="cor1"><a href="<?php echo get_home_url(); ?>/seguimentos/padarias" title="Padarias"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-padarias.png" alt="Padarias"><h3>Padarias</h3></a></li>
+			<?php /*<li class="cor2"><a href="javascript:" title="Delivery"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-default.png" alt="Delivery"><h3>Delivery</h3></a></li>
+			<li class="cor3"><a href="javascript:" title="Casa de Carnes"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-default.png" alt="Casa de Carnes"><h3>Casa de Carnes</h3></a></li>
+			<li class="cor1"><a href="javascript:" title="Fast Food"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-default.png" alt="Fast Food"><h3>Fast Food</h3></a></li>
+			<li class="cor2"><a href="javascript:" title="Calçados e Confecções"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/ico-default.png" alt="Calçados e Confecções"><h3>Calçados e Confecções</h3></a></li>*/?>
 		</ul>
 
 	</div>
@@ -92,7 +92,7 @@
 
 		<p class="sub-tit center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod eget mi ullam euismod eget mi att<br>lobortis Quisque ullamcorper felis vestibulum dictum amet, consectetur adipiscinullam. <a href="javascript:" title="Leia mais">Leia mais</a></p>
 
-		<a href="javascript:" title="Solicite Ajuda" class="button ajuda diagonal"><span>Solicite Ajuda</span></a>
+		<a href="javascript:" title="Solicite Ajuda" class="button ajuda"><span>Solicite Ajuda</span></a>
 
 	</div>
 </section>
@@ -103,7 +103,7 @@
 		<h2>Sistemas</h2>
 		<p class="sub-tit center">Lorem ipsum dolor sit amet, consectetur adipiscing Nullam euismod eget mi ullam euismod eget mi att rtisisque ullamcorper felis vestibul.</p>
 
-		<a href="javascript:" title="Clique Aqui" class="button btn-sistemas diagonal"><span>Clique Aqui</span></a>
+		<a href="javascript:" title="Clique Aqui" class="button btn-sistemas"><span>Clique Aqui</span></a>
 
 	</div>
 </section>
@@ -150,7 +150,7 @@
 		width = width+100;
 		width = '-'+width+'px';
 		jQuery(this).css('margin-left',width);
-	});   
+	});  
 
 		// FORM
 		/*jQuery(".enviar").click(function(){

@@ -91,7 +91,7 @@
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" media="screen" />
 
-<?php if(is_singular('produto')){ ?>
+<?php if(is_singular('seguimentos')){ ?>
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl.carousel.min.css" type="text/css" media="screen" />
 <?php } ?>
 
@@ -157,23 +157,23 @@
 				<nav class="nav">
 					<ul class="menu-principal">
 						<li class="<?php if((is_post_type_archive('lojas')) or (is_post_type_archive('produto')) or (is_tax('categoria_produto')) or (is_singular('produto'))){ echo 'active'; } ?>">
-							<a href="<?php echo get_home_url(); ?>/produto" title="Equipamentos" class="">Equipamentos</a>
+							<a href="<?php echo get_home_url(); ?>/" title="Equipamentos" class="">Equipamentos</a>
 						</li>
 
 						<li class="<?php if((is_post_type_archive('lojas')) or (is_post_type_archive('produto')) or (is_tax('categoria_produto')) or (is_singular('produto'))){ echo 'active'; } ?>">
-							<a href="<?php echo get_home_url(); ?>/produto" title="Sistemas" class="">Sistemas</a>
+							<a href="<?php echo get_home_url(); ?>/" title="Sistemas" class="">Sistemas</a>
 						</li>
 
 						<li class="<?php if((is_post_type_archive('lojas')) or (is_post_type_archive('produto')) or (is_tax('categoria_produto')) or (is_singular('produto'))){ echo 'active'; } ?>">
-							<a href="<?php echo get_home_url(); ?>/produto" title="Suporte Técnico" class="">Suporte Técnico</a>
+							<a href="<?php echo get_home_url(); ?>/" title="Suporte Técnico" class="">Suporte Técnico</a>
 						</li>
 
 						<li class="<?php if((is_post_type_archive('lojas')) or (is_post_type_archive('produto')) or (is_tax('categoria_produto')) or (is_singular('produto'))){ echo 'active'; } ?>">
-							<a href="<?php echo get_home_url(); ?>/produto" title="A Empresa" class="">A Empresa</a>
+							<a href="<?php echo get_home_url(); ?>/" title="A Empresa" class="">A Empresa</a>
 						</li>
 
 						<li class="<?php if((is_post_type_archive('lojas')) or (is_post_type_archive('produto')) or (is_tax('categoria_produto')) or (is_singular('produto'))){ echo 'active'; } ?>">
-							<a href="<?php echo get_home_url(); ?>/produto" title="Contato" class="">Contato</a>
+							<a href="<?php echo get_home_url(); ?>/" title="Contato" class="">Contato</a>
 						</li>
 					</ul>
 				</nav>
@@ -198,7 +198,7 @@
 						</div>
 
 						<div class="orcamento-header">
-							<a href="javascript:" class="button orcamento diagonal" title="Solicite um Orçamento"><span>Solicite um Orçamento</span></a>
+							<a href="javascript:" class="button orcamento" title="Solicite um Orçamento"><span>Solicite um Orçamento</span></a>
 							<span class="carrinho"></span>
 						</div>
 					</div>

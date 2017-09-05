@@ -23,6 +23,18 @@ h2 {
 	color: $azul-petroleo;
 	display: block;
 	text-align: center;
+
+	&.tit-grande {
+		font-size: 4.812rem;
+		line-height: 5rem;
+	}
+
+	&.ico {
+		img {
+			display: block;
+			margin: 0 auto 10px;
+		}
+	}
 }
 
 h3 {
@@ -47,6 +59,11 @@ p {
 	font-size: $font-size;
 	line-height: $font-size+.5;
 	font-weight: $light;
+	margin-bottom: 15px;
+
+	&:last-child {
+		margin-bottom: 0px;
+	}
 
 	&.mini {
 		font-size: 1rem;
@@ -87,6 +104,15 @@ p {
 .center {
 	text-align: center;
 }
+
 .no-margim {
 	margin: 0!important;
+}
+
+.azul {
+	color: $azul!important;
+}
+
+.azul-petroleo {
+	color: $azul-petroleo!important;
 }

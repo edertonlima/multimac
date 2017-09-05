@@ -77,8 +77,26 @@ body * {
 		padding: 80px 0;
 	}
 
+	&.seguimentos {
+		padding: 0;
+	}
+
+	&.box-etapas {
+
+	}
+
 	&.cinza {
 		background-color: $cinza;
+	}
+
+	&.azul {
+		background-color: $azul;
+
+		&.box-etapas {
+			.sub-tit, .subtitulo, .content-txt p {
+				color: #ffffff;
+			}
+		}
 	}
 
 	&.border {
