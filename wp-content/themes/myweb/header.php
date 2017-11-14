@@ -90,10 +90,7 @@
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" media="screen" />
-
-<?php if(is_singular('seguimentos')){ ?>
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl.carousel.min.css" type="text/css" media="screen" />
-<?php } ?>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/owl.carousel.min.css" type="text/css" media="screen" />
 
 <!-- JQUERY -->
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery.min.js"></script>
@@ -156,12 +153,12 @@
 
 				<nav class="nav">
 					<ul class="menu-principal">
-						<li class="<?php if((is_post_type_archive('lojas')) or (is_post_type_archive('produto')) or (is_tax('categoria_produto')) or (is_singular('produto'))){ echo 'active'; } ?>">
-							<a href="<?php echo get_home_url(); ?>/" title="Equipamentos" class="">Equipamentos</a>
+						<li class="menu-equipamentos">
+							<a href="<?php echo get_home_url(); ?>/equipamentos" title="Equipamentos" class="">Equipamentos</a>
 						</li>
 
-						<li class="<?php if((is_post_type_archive('lojas')) or (is_post_type_archive('produto')) or (is_tax('categoria_produto')) or (is_singular('produto'))){ echo 'active'; } ?>">
-							<a href="<?php echo get_home_url(); ?>/" title="Sistemas" class="">Sistemas</a>
+						<li class="menu-sistemas">
+							<a href="<?php echo get_home_url(); ?>/sistemas" title="Sistemas" class="">Sistemas</a>
 						</li>
 
 						<li class="<?php if((is_post_type_archive('lojas')) or (is_post_type_archive('produto')) or (is_tax('categoria_produto')) or (is_singular('produto'))){ echo 'active'; } ?>">

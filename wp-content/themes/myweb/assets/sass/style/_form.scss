@@ -70,6 +70,10 @@ button, input[type='submit'], .button {
 			color: #ffffff;
 			font-style: italic;
 			font-weight: $light;
+
+			i {
+				color: #ffffff; 
+			}
 		}
 
 		&:hover {
@@ -142,7 +146,7 @@ button, input[type='submit'], .button {
 		border-radius: 5px;
 		font-size: 1.25rem;
 		width: auto;
-		margin: 70px 0 0;
+		margin: 20px 0 0;
 		display: inline-block;
 		float: left;
 		font-style: normal;
@@ -162,6 +166,20 @@ button, input[type='submit'], .button {
 			display: block;
 			color: #ffffff;
 			font-style: italic;
+		}
+	}
+
+	&.ver-mais {
+		background-color: $azul-petroleo;
+		border-radius: 10px;
+		color: #ffffff;
+		font-style: italic;
+		height: 45px;
+		line-height: 45px;
+
+		&:hover {
+			background-color: darken($azul-petroleo, 10%);
+			text-decoration: none;
 		}
 	}
 }

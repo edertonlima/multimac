@@ -180,3 +180,25 @@
 		}
 	}
 }
+
+body {
+	&.post-type-archive-equipamentos, &.tax-equipamentos_taxonomy, &.single-equipamentos {
+		.nav {
+			.menu-equipamentos {
+				a {
+					color: $azul;
+				}
+			}
+		}
+	}
+
+	&.post-type-archive-sistemas {
+		.nav {
+			.menu-sistemas {
+				a {
+					color: $azul;
+				}
+			}
+		}
+	}
+}

@@ -81,8 +81,12 @@ body * {
 		padding: 0;
 	}
 
-	&.box-etapas {
+	&.no-padding-top {
+		padding-top: 0;
+	}
 
+	&.no-padding {
+		padding: 0;
 	}
 
 	&.cinza {

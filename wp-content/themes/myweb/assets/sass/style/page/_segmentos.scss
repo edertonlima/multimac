@@ -1,12 +1,10 @@
 .list-segmentos {
-	margin-top: 50px;
 	text-align: center;
 	
 	li {
 		padding: 2.5px;
 		width: 25%;
 		display: inline-block;
-		border-radius: 40px;
 		overflow: hidden;
 		@include box-sizing;
 
@@ -45,6 +43,7 @@
 			overflow: hidden;
 			padding: 52px 22px 25px;
 			text-decoration: none;
+			border-radius: 25px;
 			@include animacao;
 		}
 
@@ -79,12 +78,13 @@
 		}
 	}
 
-	.subtitulo {
+	.subtitulo, .subtitulo p {
 		color: $tit-escuro;
 		font-size: 1.3rem;
 		line-height: 1.5rem;
 		display: block;
 		font-style: italic;
+		font-weight: $regular;
 
 		&.margin-top {
 			margin-top: 20px;
@@ -363,6 +363,15 @@
 					&:hover {
 						opacity: .5;
 					}
+
+					&.disabled {
+						opacity: .3;
+						cursor: default;
+
+						&:hover {
+							opacity: .3;
+						}
+					}
 				}
 
 				.owl-prev {
@@ -376,6 +385,12 @@
 				}
 			}
 		}
+	}
+}
+
+.home {
+	.list-segmentos {
+		margin-top: 50px;
 	}
 }
 

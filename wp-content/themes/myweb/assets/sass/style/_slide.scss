@@ -11,6 +11,7 @@
 			float: left;
 			position: absolute;
 			left: 50%;
+			top: 50%;
 		}
 
 		h2 {
@@ -18,7 +19,6 @@
 			font-size: 4rem;
 			width: auto;
 			text-align: left;
-			margin-top: 120px;
 			margin-bottom: 20px;
 			float: left;
 			@include clear;
@@ -81,11 +81,12 @@
 
 	.carousel-indicators {
 		position: absolute;
-		bottom: 10px;
+		bottom: 0px;
 		left: 0;
 		width: 100%;
 		display: inline-block;
 		margin: 0;
+		padding: 10px 0;
 
 		li {
 			width: 18px;

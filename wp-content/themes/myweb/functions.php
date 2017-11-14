@@ -103,15 +103,6 @@ if( function_exists('acf_add_options_page') ) {
 		'redirect'		=> false,
 		'icon_url' 		=> 'dashicons-admin-collapse'
 	));
-
-	/*acf_add_options_page(array(
-		'page_title' 	=> 'Formulários',
-		'menu_title'	=> 'Formulários',
-		'menu_slug' 	=> 'formularios',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false,
-		'icon_url' 		=> 'dashicons-admin-comments'
-	));*/
 	
 	acf_add_options_page(array(
 		'page_title' 	=> 'Configurações',
@@ -124,6 +115,24 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Configurações Gerais',
 		'menu_title'	=> 'Geral',
+		'parent_slug'	=> 'configuracoes-geral',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Segmentos',
+		'menu_title'	=> 'Segmentos',
+		'parent_slug'	=> 'configuracoes-geral',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Equipamentos',
+		'menu_title'	=> 'Equipamentos',
+		'parent_slug'	=> 'configuracoes-geral',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Sistemas',
+		'menu_title'	=> 'Sistemas',
 		'parent_slug'	=> 'configuracoes-geral',
 	));
 
@@ -154,84 +163,13 @@ function paginacao() {
         }
 }
 
-/*
-add_action( 'init', 'create_post_type_produto' );
-function create_post_type_produto() {
-
-	$labels = array(
-	    'name' => _x('Produtos', 'post type general name'),
-	    'singular_name' => _x('Produto', 'post type singular name'),
-	    'add_new' => _x('Adicionar novo', 'Produto'),
-	    'add_new_item' => __('Addicionar novo produto'),
-	    'edit_item' => __('Editar produto'),
-	    'new_item' => __('Novo produto'),
-	    'all_items' => __('Todos as produtos'),
-	    'view_item' => __('Visualizar produto'),
-	    'search_items' => __('Procurar produto'),
-	    'not_found' =>  __('Nenhum produto encontrado.'),
-	    'not_found_in_trash' => __('Nenhum produto encontrado na lixeira.'),
-	    'parent_item_colon' => '',
-	    'menu_name' => 'Produtos'
-	);
-	$args = array(
-	    'labels' => $labels,
-	    'public' => true,
-	    'publicly_queryable' => true,
-	    'show_ui' => true,
-	    'show_in_menu' => true,
-	    'rewrite' => true,
-	    'capability_type' => 'post',
-	    'has_archive' => true,
-	    'hierarchical' => false,
-	    'menu_position' => null,
-	    'menu_icon' => 'dashicons-tag',
-	    'supports' => array('title','thumbnail')
-	  );
-
-    register_post_type( 'produto', $args );
-}
-
-add_action( 'init', 'create_taxonomy_categoria_produto' );
-function create_taxonomy_categoria_produto() {
-
-	$labels = array(
-	    'name' => _x( 'Categoria', 'taxonomy general name' ),
-	    'singular_name' => _x( 'Categoria', 'taxonomy singular name' ),
-	    'search_items' =>  __( 'Procurar categoria' ),
-	    'all_items' => __( 'Todas as categorias' ),
-	    'parent_item' => __( 'Categoria pai' ),
-	    'parent_item_colon' => __( 'Categoria pai:' ),
-	    'edit_item' => __( 'Editar categoria' ),
-	    'update_item' => __( 'Atualizar categoria' ),
-	    'add_new_item' => __( 'Adicionar nova categoria' ),
-	    'new_item_name' => __( 'Nova categoria' ),
-	    'menu_name' => __( 'Categoria' ),
-	);
-
-    register_taxonomy( 'categoria_produto', array( 'produto' ), array(
-        'hierarchical' => true,
-        'labels' => $labels,
-        'show_ui' => true,
-        'show_admin_column' => true,
-        'show_in_tag_cloud' => true,
-        'query_var' => true,
-		'has_archive' => 'produto',
-		'rewrite' => array(
-		    'slug' => 'produto',
-		    'with_front' => false,
-			),
-        )
-    );
-}
-*/
-
 // equipamentos
-add_action( 'init', 'equipamento' );
-function equipamento() {
-	$singular = 'Equipamento';
-	$plural = 'Equipamentos';
-	$singular_min = 'equipamento';
-	$plural_min = 'equipamentos';
+add_action( 'init', 'sistema' );
+function sistema() {
+	$singular = 'Sistema';
+	$plural = 'Sistemas';
+	$singular_min = 'sistema';
+	$plural_min = 'sistemas';
 
 	$labels = array(
 		'name' => _x($plural, 'post type general name'),
@@ -260,52 +198,131 @@ function equipamento() {
 		'hierarchical' => false,
 		'menu_position' => null,
 		'menu_icon' => 'dashicons-tag',
-		'supports' => array('title','excerpt')
+		'supports' => array('title','editor','thumbnail')
 	  );
 
 	register_post_type( $plural_min, $args );
 }
 
-// seguimentos
-add_action( 'init', 'seguimento' );
-function seguimento() {
-	$singular = 'Seguimento';
-	$plural = 'Seguimentos';
-	$singular_min = 'seguimento';
-	$plural_min = 'seguimentos';
 
-	$labels = array(
-		'name' => _x($plural, 'post type general name'),
-		'singular_name' => _x($singular, 'post type singular name'),
-		'add_new' => _x('Adicionar novo '.$singular, 'Produto'),
-		'add_new_item' => __('Addicionar novo '.$singular),
-		'edit_item' => __('Editar '.$singular),
-		'new_item' => __('Novo '.$singular),
-		'all_items' => __('Todos as '.$plural),
-		'view_item' => __('Visualizar '.$singular),
-		'search_items' => __('Procurar '.$singular),
-		'not_found' =>  __('Nenhum '.$singular_min.' Encontrado.'),
-		'not_found_in_trash' => __('Nenhum '.$singular_min.' encontrado na lixeira.'),
-		'parent_item_colon' => '',
-		'menu_name' => $plural
-	);
-	$args = array(
-		'labels' => $labels,
-		'public' => true,
-		'publicly_queryable' => true,
-		'show_ui' => true,
-		'show_in_menu' => true,
-		'rewrite' => true,
-		'capability_type' => 'post',
-		'has_archive' => true,
-		'hierarchical' => false,
-		'menu_position' => null,
-		'menu_icon' => 'dashicons-tag',
-		'supports' => array('title','excerpt')
-	  );
 
-	register_post_type( $plural_min, $args );
-}
+	/* POST TYPE */
+	function equipamentos_post_type(){
+		register_post_type('equipamentos', array( 
+			'labels'            =>  array(
+				'name'          =>      __('Equipamentos'),
+				'singular_name' =>      __('Equipamentos'),
+				'all_items'     =>      __('Todos'),
+				'add_new'       =>      __('Adicionar'),
+				'add_new_item'  =>      __('Adicionar'),
+				'edit_item'     =>      __('Editar'),
+				'view_item'     =>      __('Visualizar'),
+				'search_items'  =>      __('Pesquisar'),
+				'no_found'      =>      __('Nenhum item encontrato'),
+				'not_found_in_trash' => __('A lixeira está vazia.')
+			),
+			'public'            =>  true,
+			'publicly_queryable'=>  true,
+			'show_ui'           =>  true, 
+			'query_var'         =>  true,
+			'show_in_nav_menus' =>  false,
+			'capability_type'   =>  'post',
+			'hierarchical'      =>  true,
+			'rewrite'=> [
+				'slug' => 'equipamentos',
+				"with_front" => false
+			],
+			"cptp_permalink_structure" => "/%equipamentos_taxonomy%/%postname%/",
+			'menu_position'     =>  21,
+			'supports'          =>  array('title','editor','excerpt','thumbnail'),
+			'has_archive'       =>  true,
+			'menu_icon' => 'dashicons-admin-site'
+		));
+		flush_rewrite_rules();
+	}
+	add_action('init', 'equipamentos_post_type');
+	function equipamentos_taxonomy() {  
+		register_taxonomy(  
+			'equipamentos_taxonomy',  
+			'equipamentos',        
+			array(
+				'label' => __( 'Categorias' ),
+				'rewrite'=> [
+					'slug' => 'equipamentos',
+					"with_front" => false
+				],
+				"cptp_permalink_structure" => "/%equipamentos_taxonomy%/",
+				'hierarchical'               => true,
+				'public'                     => true,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_in_nav_menus'          => true,
+				'query_var' => true
+			) 
+		);  
+	}  
+	add_action( 'init', 'equipamentos_taxonomy');
+	/* POST TYPE */
+
+
+
+	/* POST TYPE */
+	function segmentos_post_type(){
+		register_post_type('segmentos', array( 
+			'labels'            =>  array(
+				'name'          =>      __('Segmentos'),
+				'singular_name' =>      __('Segmentos'),
+				'all_items'     =>      __('Todos'),
+				'add_new'       =>      __('Adicionar'),
+				'add_new_item'  =>      __('Adicionar'),
+				'edit_item'     =>      __('Editar'),
+				'view_item'     =>      __('Visualizar'),
+				'search_items'  =>      __('Pesquisar'),
+				'no_found'      =>      __('Nenhum item encontrato'),
+				'not_found_in_trash' => __('A lixeira está vazia.')
+			),
+			'public'            =>  true,
+			'publicly_queryable'=>  true,
+			'show_ui'           =>  true, 
+			'query_var'         =>  true,
+			'show_in_nav_menus' =>  false,
+			'capability_type'   =>  'post',
+			'hierarchical'      =>  true,
+			'rewrite'=> [
+				'slug' => 'segmentos',
+				"with_front" => false
+			],
+			"cptp_permalink_structure" => "/%postname%/",
+			'menu_position'     =>  21,
+			'supports'          =>  array('title','excerpt'),
+			'has_archive'       =>  true,
+			'menu_icon' => 'dashicons-admin-site'
+		));
+		flush_rewrite_rules();
+	}
+	add_action('init', 'segmentos_post_type');
+	/*function segmentos_taxonomy() {  
+		register_taxonomy(  
+			'segmentos_taxonomy',  
+			'segmentos',        
+			array(
+				'label' => __( 'Categorias' ),
+				'rewrite'=> [
+					'slug' => 'segmentos',
+					"with_front" => false
+				],
+				"cptp_permalink_structure" => "/%segmentos_taxonomy%/",
+				'hierarchical'               => true,
+				'public'                     => true,
+				'show_ui'                    => true,
+				'show_admin_column'          => true,
+				'show_in_nav_menus'          => true,
+				'query_var' => true
+			) 
+		);  
+	}  
+	add_action( 'init', 'segmentos_taxonomy');*/
+	/* POST TYPE */
 
 
 

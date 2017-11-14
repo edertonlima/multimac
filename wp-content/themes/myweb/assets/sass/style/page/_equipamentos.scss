@@ -1,0 +1,164 @@
+.list-equipamentos {
+	.subtitulo {
+		background-color: $cinza;
+		padding: 20px 0 100px;
+		margin: 0!important;
+	}
+
+	.list-item {
+		margin: 0 -45px;
+
+		.col-4 {
+			padding: 0 45px;
+			margin-bottom: 50px;
+
+			.content-equipamento {
+				background-color: #ffffff;
+				border-radius: 15px;
+				overflow: hidden;
+				width: 100%;
+				padding: 15px;
+				@include box-sizing;
+
+				.img-list {
+					border-bottom: 1px solid $cinza2;
+					padding-bottom: 10px;
+					margin-bottom: 10px;
+				}
+
+				h3 {
+					color: $azul-petroleo;
+					height: 50px;
+					overflow: hidden;
+				}
+
+				p {
+					height: 65px;
+					overflow: hidden;
+				}
+			}
+		}
+	}
+}
+
+.equipamentos {
+	.cat-equipamento {
+		color: $azul-petroleo;
+		font-size: 1rem;
+		margin: 25px 0;
+		display: inline-block;
+		@include animacao;
+		font-style: normal;
+
+		&:hover {
+			color: $azul-escuro;
+			text-decoration: none;
+		}
+	}
+
+	h3 {
+		text-align: left;
+		font-weight: $bold;
+		font-size: 2.225rem;
+		line-height: 2.5rem;
+		color: $azul-petroleo;
+	}
+
+	.resumo {
+		display: block;
+		border: 2px solid $cinza2;
+		border-width: 2px 0;
+		padding: 20px 0;
+		margin: 20px 0;
+	}
+
+	.botoes {
+		display: block;
+		width: 100%;
+		margin-top: 50px;
+
+		.orcamento {
+			width: auto;
+			max-width: none;
+			padding: 0 25px;
+
+			span, i {
+				font-size: 1.125rem;
+			}
+
+			&:first-child {
+				margin-right: 20px;
+			}
+		}
+	}
+
+	.galeria-equipamento {
+		display: block;
+		margin: 0 -2px;
+
+		li {
+			width: 20%;
+			padding: 4px 2px;
+			float: left;
+			@include box-sizing;
+
+			a {
+				border: 2px solid #ffffff;
+				display: block;
+				@include animacao;
+
+				img {
+					display: block;
+				}
+
+				&:hover {
+					border-color: $azul-petroleo;
+				}
+			}
+
+			&.img-principal {
+				position: relative;
+				width: 100%;
+
+				a {
+					border: none;
+				}
+
+				i {
+					position: absolute;
+					color: #ffffff;
+					opacity: .3;
+					top: 50%;
+					left: 50%;
+					font-size: 5rem;
+					margin: -38px 0 0 -40px;
+					@include animacao;
+				}
+
+				&:hover {
+					i {
+						opacity: 1;
+						color: $azul-petroleo;
+					}
+				}
+			}
+		}
+	}
+
+	.content-equipamento {
+		border-top: 3px solid $azul-petroleo;
+		margin-top: 50px;
+		padding-top: 50px;
+		float: left;
+		width: 100%;
+		@include clear;
+
+		h4 {
+			margin-bottom: 10px;
+			display: block;
+			color: $azul-petroleo;
+			font-size: 1rem;
+			line-height: 1.225rem;
+		}
+	}
+}
