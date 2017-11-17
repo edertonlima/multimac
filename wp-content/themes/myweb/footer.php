@@ -6,11 +6,10 @@
 				<div class="col-2">
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo_footer_multimac.png" alt="Multimac" class="logo-footer" />
 					<ul>
-						<li><a href="#" title="Sobre">Sobre</a></li>
-						<li><a href="#" title="Empresa">Empresa</a></li>
-						<li><a href="#" title="Parceiros">Parceiros</a></li>
-						<li><a href="#" title="Clientes">Clientes</a></li>
-						<li class="separado"><a href="#" title="Suporte Técnico">Suporte Técnico</a></li>
+						<li><a href="<?php echo get_home_url(); ?>/empresa" title="A Empresa" class="">A Empresa</a></li>
+						<li><a href="<?php echo get_home_url(); ?>/contato" title="Contato" class="">Contato</a></li>
+						<li class="separado"><a href="<?php echo get_home_url(); ?>/equipamentos" title="Equipamentos" class="">Equipamentos</a></li>
+						<li><a href="<?php echo get_home_url(); ?>/sistemas" title="Sistemas" class="">Sistemas</a></li>
 					</ul>
 				</div>
 				<div class="col-3">

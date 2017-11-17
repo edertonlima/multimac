@@ -58,7 +58,8 @@
 			<?php
 				query_posts(
 					array(
-						'post_type' => 'segmentos'
+						'post_type' => 'segmentos',
+						'posts_per_page' => 3
 					)
 				);
 
@@ -102,31 +103,34 @@
 
 <section class="box-content box-blog cinza">
 	<div class="container">
-		
 		<ul class="list-blog">
-			<li class="item-blog">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/img-blog1.jpg" alt="">
-				<div class="cont-blog">
-					<h3><a href="javascript:" title="Lorem Ipsum Dolor Sit Amet Faeva Coqsi">Lorem Ipsum Dolor Sit Amet Faeva Coqsi</a></h3>
-					<p>Lorem ipsum dolor sit amet, consect etur adipiscing elit nullam euismod eget mi ulla. <a href="javascript;" title="Leia mais">Leia mais</a></p>
-				</div>
-			</li>
 
-			<li class="item-blog">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/img-blog1.jpg" alt="">
-				<div class="cont-blog">
-					<h3><a href="javascript:" title="Lorem Ipsum Dolor Sit Amet Faeva Coqsi">Lorem Ipsum Dolor Sit Amet Faeva Coqsi</a></h3>
-					<p>Lorem ipsum dolor sit amet, consect etur adipiscing elit nullam euismod eget mi ulla. <a href="javascript;" title="Leia mais">Leia mais</a></p>
-				</div>
-			</li>
+			<?php
+				query_posts(
+					array(
+						'post_type' => 'post'
+					)
+				);
 
-			<li class="item-blog">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog/img-blog1.jpg" alt="">
-				<div class="cont-blog">
-					<h3><a href="javascript:" title="Lorem Ipsum Dolor Sit Amet Faeva Coqsi">Lorem Ipsum Dolor Sit Amet Faeva Coqsi</a></h3>
-					<p>Lorem ipsum dolor sit amet, consect etur adipiscing elit nullam euismod eget mi ulla. <a href="javascript;" title="Leia mais">Leia mais</a></p>
-				</div>
-			</li>
+				while ( have_posts() ) : the_post();
+
+					$imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '' ); ?>
+
+					<li class="item-blog">
+						<?php if($imagem[0] != ''){ ?>
+							<img src="<?php echo $imagem[0]; ?>" alt="<?php the_title(); ?>">
+						<?php } ?>
+						
+						<div class="cont-blog">
+							<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+							<p><?php the_excerpt(); ?><a href="<?php the_permalink(); ?>" title="Leia mais">Leia mais</a></p>
+						</div>
+					</li>
+
+				<?php endwhile;
+				wp_reset_query();
+			?>
+
 		</ul>
 
 	</div>

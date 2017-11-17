@@ -201,4 +201,24 @@ body {
 			}
 		}
 	}
+
+	&.page-id-100 {
+		.nav {
+			.menu-contato {
+				a {
+					color: $azul;
+				}
+			}
+		}
+	}
+
+	&.page-id-102 {
+		.nav {
+			.menu-empresa {
+				a {
+					color: $azul;
+				}
+			}
+		}
+	}
 }

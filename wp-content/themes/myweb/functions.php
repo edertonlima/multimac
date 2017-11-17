@@ -8,6 +8,7 @@
 
 /* HABILITAR / DESABILITAR */
 add_theme_support( 'post-thumbnails' );
+add_post_type_support( 'post', 'excerpt' );
 
 // Unable admin bar
 add_filter('show_admin_bar', '__return_false');
@@ -17,7 +18,7 @@ add_action( 'init', 'my_custom_init' );
 function my_custom_init() {
 	//remove_post_type_support( 'post', 'editor' );
 	//remove_post_type_support('page', 'editor');
-	remove_post_type_support( 'page', 'thumbnail' );
+	//remove_post_type_support( 'page', 'thumbnail' );
 }
 
 // REMOVE PARENT PAGE

@@ -227,6 +227,12 @@ form {
 	}
 
 	fieldset {
+		margin-top: 20px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
 		span {
 			border: 2px solid #5a5758;
 			border-width: 0 0 2px;
@@ -234,7 +240,6 @@ form {
 			padding-bottom: 20px;
 			display: block;
 		}
-		margin-top: 20px;
 	}
 
 	&.busca-header {
@@ -271,6 +276,75 @@ form {
 			&:hover {
 				.fa {
 					color: $azul-claro;
+				}
+			}
+		}
+	}
+
+	&.contato {
+		fieldset {
+			margin-top: 15px;
+
+			input, textarea {
+				border: 1px solid $azul;
+				border-radius: 10px;
+				color: $cor-txt;
+				font-weight: $light;
+				font-size: .937rem; 
+				margin: 0;
+
+				@mixin placeholder {
+					opacity: 1;
+					color: $cor-txt;
+					font-weight: $light;
+					font-size: .937rem; 
+				}
+
+				&::-webkit-input-placeholder {
+					@include placeholder;
+				}
+
+				&:-moz-placeholder {
+					@include placeholder;
+				}
+
+				&::-moz-placeholder {
+					@include placeholder;
+				}
+
+				&:-ms-input-placeholder {  
+					@include placeholder;
+				}
+			}
+
+			textarea {
+				line-height: 2rem;
+				padding: 5px 10px;
+			}
+
+			input {
+				height: 45px;
+				line-height: 45px;
+			}
+
+			button {
+				padding: 0 90px;
+				height: 70px;
+				line-height: 70px;
+				background-color: $azul-petroleo;
+				font-size: 1.125rem;
+				font-weight: $regular;
+				font-style: italic;
+				display: inline-block;
+				margin-top: 15px;
+				border-radius: 10px;
+				color: #ffffff;
+				width: auto;
+				@include animacao;
+
+				&:hover {
+					background-color: darken($azul-petroleo, 10%);
+					color: #ffffff;
 				}
 			}
 		}
@@ -319,13 +393,7 @@ label:hover:before {
 	}
 }
 
-::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {  
-	opacity: 1;
-	color: $verde;
-	font-weight: $light;
-	line-height: 35px;
-	font-size: 1.5rem; 
-}
+
 
 .msg-form {
 	text-align: center;

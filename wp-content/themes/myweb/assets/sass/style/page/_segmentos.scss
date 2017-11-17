@@ -64,42 +64,6 @@
 }
 
 .seguimentos {
-	.header-post {
-		background-size: cover;
-		background-position: center;
-
-		h2 {
-			padding: 150px 0 20px;
-			color: $tit-escuro;
-			font-size: 4rem;
-			text-decoration: none;
-			text-align: left;
-			text-shadow: 1px 1px 1px #ffffff;
-		}
-	}
-
-	.subtitulo, .subtitulo p {
-		color: $tit-escuro;
-		font-size: 1.3rem;
-		line-height: 1.5rem;
-		display: block;
-		font-style: italic;
-		font-weight: $regular;
-
-		&.margin-top {
-			margin-top: 20px;
-		}
-
-		&.margin-bottom {
-			margin-bottom: 100px;
-		}
-
-		&.destaque {
-			font-size: 1.8rem;
-			line-height: 2rem;
-			font-weight: $light;
-		}
-	}
 
 	.passos, .button-inicio {
 		margin-bottom: 30px;

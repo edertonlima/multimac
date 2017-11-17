@@ -1,0 +1,41 @@
+.contato {	
+	.tel-contato {
+		background-color: $azul;
+		padding: 20px 0;
+		margin-bottom: 70px;
+
+		i {
+			font-size: 2rem;
+			color: $azul-petroleo;
+			position: relative;
+			top: 2px;
+		}
+
+		span {
+			font-size: 1.562rem;
+			color: #ffffff;
+			font-weight: $light;
+			margin-left: 2px;
+			margin-right: 20px;
+		}
+	}
+
+	iframe {
+		width: 100%;
+		border: 1px solid $azul;
+		border-radius: 10px	;
+		height: 347px;
+	}
+
+	h5 {
+		color: $azul-petroleo;
+		font-size: 1rem;
+		font-weight: $regular;
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	form {
+		padding-bottom: 70px;
+	}
+}

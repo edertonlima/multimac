@@ -161,16 +161,16 @@
 							<a href="<?php echo get_home_url(); ?>/sistemas" title="Sistemas" class="">Sistemas</a>
 						</li>
 
-						<li class="<?php if((is_post_type_archive('lojas')) or (is_post_type_archive('produto')) or (is_tax('categoria_produto')) or (is_singular('produto'))){ echo 'active'; } ?>">
+						<?php /*<li class="">
 							<a href="<?php echo get_home_url(); ?>/" title="Suporte Técnico" class="">Suporte Técnico</a>
+						</li>*/ ?>
+
+						<li class="menu-empresa">
+							<a href="<?php echo get_home_url(); ?>/empresa" title="A Empresa" class="">A Empresa</a>
 						</li>
 
-						<li class="<?php if((is_post_type_archive('lojas')) or (is_post_type_archive('produto')) or (is_tax('categoria_produto')) or (is_singular('produto'))){ echo 'active'; } ?>">
-							<a href="<?php echo get_home_url(); ?>/" title="A Empresa" class="">A Empresa</a>
-						</li>
-
-						<li class="<?php if((is_post_type_archive('lojas')) or (is_post_type_archive('produto')) or (is_tax('categoria_produto')) or (is_singular('produto'))){ echo 'active'; } ?>">
-							<a href="<?php echo get_home_url(); ?>/" title="Contato" class="">Contato</a>
+						<li class="menu-contato">
+							<a href="<?php echo get_home_url(); ?>/contato" title="Contato" class="">Contato</a>
 						</li>
 					</ul>
 				</nav>
