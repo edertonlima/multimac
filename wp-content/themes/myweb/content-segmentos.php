@@ -43,24 +43,25 @@
 			
 
 			<?php
-				$posts = get_field('equipamentos_segmentos');
+				$categorias_equipamentos = get_field('equipamentos_segmentos');
 
-				if( $posts ): ?>
+				if( $categorias_equipamentos ): ?>
 					<div class="slide-item-cor slide-item">
 
-						<?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
-							<?php setup_postdata($post); ?>
+						<?php foreach( $categorias_equipamentos as $categoria): // variable must be called $post (IMPORTANT) ?>
+							<?php //setup_postdata($equipamento);
+							//$term = get_term( $categoria, 'equipamentos_taxonomy' ); //var_dump($categoria); ?>
 
 							<div class="item">
-								<a href="<?php the_permalink(); ?>">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/ico_equipamentos.png" alt="<?php the_title(); ?>">
-									<span><?php the_title(); ?></span>
+								<a href="<?php echo get_term_link($categoria->term_id); ?>">
+									<img src="<?php the_field('ico_segmentos','equipamentos_taxonomy_'.$categoria->term_id); ?>" alt="<?php echo $categoria->name; ?>">
+									<span><?php echo $categoria->name; ?></span>
 								</a>
 							</div>
 
 						<?php endforeach; ?>
 
-						<?php wp_reset_postdata(); ?>
+						<?php //wp_reset_postdata(); ?>
 
 					</div>
 				<?php endif;

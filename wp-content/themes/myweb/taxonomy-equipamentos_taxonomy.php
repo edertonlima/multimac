@@ -4,7 +4,7 @@
 	<?php $post_type = get_post_type_object( $post->post_type ); ?>
 
 	<section class="box-content seguimentos list-equipamentos">		
-		<header class="header-post" style="background-image: url('<?php the_field('img_topo',$categoria[0]->taxonomy.'_'.$categoria[0]->term_id); ?>');">
+		<header class="header-post <?php if(!get_field('img_topo',$categoria[0]->taxonomy.'_'.$categoria[0]->term_id)){ echo 'bg-off'; } ?>" style="background-image: url('<?php the_field('img_topo',$categoria[0]->taxonomy.'_'.$categoria[0]->term_id); ?>');">
 			<div class="container">
 				<h2><?php echo single_term_title(); ?></h2>
 			</div>

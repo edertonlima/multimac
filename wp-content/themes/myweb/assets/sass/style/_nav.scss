@@ -1,17 +1,20 @@
 .nav {
 	width: 100%;
+    position: relative;
+    z-index: 999;
 
 	ul {
 
 		li {
-			position: relative;
-			display: inline-block;
+			float: left;
 			margin: 0;
-			padding: 0;
+			padding: 0 9px 0 8px;
+			line-height: 100px;
+			@include animacao();
 
 			a {
 				margin-left: -4px;
-				display: block;
+				display: inline-block;
 				height: 34px;
 				font-size: 1rem;
 				line-height: 34px;
@@ -23,8 +26,10 @@
 			}
 
 			&:hover, &.active {
+				background-color: $azul;
+
 				> a {
-					color: $azul;
+					color: #ffffff;
 				}
 
 				> ul {
@@ -42,25 +47,42 @@
 
 			ul {
 				display: none;
-				width: 100%;
-				left: 0;
-				top: 81px;
+				width: 500px;
+				background-color: $azul;
+				position: absolute;
+				right: 0;
+				top: 100px;
 				z-index: 999;
+				padding: 20px 0;
+				border-top: 2px solid #ffffff;
+				@include animacao();
 
 				li {
 					display: block;
+					margin-top: 10px;
+					line-height: normal;
 
 					a {
-						display: inline-block;
+						display: inline;
 						margin-left: 0px;
-						line-height: 60px;
-						color: $vermelho;
-						border-bottom: 1px solid $vermelho;
+						color: #ffffff;
+						line-height: 22px;
+						height: auto;
+						padding: 1px;
+						font-weight: $regular;
+						border-bottom: 2px solid $azul;
+						background-color: transparent;
+					}
+
+					&:nth-child(1), &:nth-child(2){
+						margin-top: 0px;
 					}
 
 					&:hover, &.active {
 						> a {
-							background-color: rgba($dourado, .5);
+							color: #ffffff;
+							border-bottom-color: #ffffff;
+							background-color: transparent;
 						}
 
 						> ul {
@@ -185,8 +207,14 @@ body {
 	&.post-type-archive-equipamentos, &.tax-equipamentos_taxonomy, &.single-equipamentos {
 		.nav {
 			.menu-equipamentos {
-				a {
+				> a {
 					color: $azul;
+				}
+
+				&:hover {
+					> a {
+						color: #ffffff!important;
+					}
 				}
 			}
 		}
@@ -195,8 +223,14 @@ body {
 	&.post-type-archive-sistemas {
 		.nav {
 			.menu-sistemas {
-				a {
+				> a {
 					color: $azul;
+				}
+
+				&:hover {
+					> a {
+						color: #ffffff!important;
+					}
 				}
 			}
 		}
@@ -205,8 +239,14 @@ body {
 	&.page-id-100 {
 		.nav {
 			.menu-contato {
-				a {
+				> a {
 					color: $azul;
+				}
+
+				&:hover {
+					> a {
+						color: #ffffff!important;
+					}
 				}
 			}
 		}
@@ -215,8 +255,14 @@ body {
 	&.page-id-102 {
 		.nav {
 			.menu-empresa {
-				a {
+				> a {
 					color: $azul;
+				}
+
+				&:hover {
+					> a {
+						color: #ffffff!important;
+					}
 				}
 			}
 		}

@@ -7,7 +7,7 @@
 			<a class="left" href="#slide" role="button" data-slide="prev"></a>
 			<a class="right" href="#slide" role="button" data-slide="next"></a>
 		</div>
-		<div class="carousel slide" data-ride="carousel" data-interval="1000000" id="slide">
+		<div class="carousel slide" data-ride="carousel" data-interval="6000" id="slide">
 
 			<div class="carousel-inner" role="listbox">
 
@@ -51,7 +51,7 @@
 	<div class="container">
 		
 		<h2>Segmentos</h2>
-		<p class="sub-tit center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod eget mi at lobortis.<br>Quisque ullamcorper felis vestibulum dictum.</p>
+		<p class="sub-tit center"><?php the_field('descricao_topo_segmentos','option'); ?></p>
 
 		<ul class="list-segmentos">
 
@@ -81,24 +81,30 @@
 		
 		<h2>Suporte Técnico Especializado</h2>
 
-		<img class="ico_suporte" src="<?php echo get_template_directory_uri(); ?>/assets/images/ico_suporte.png">
+		<img class="ico_suporte" src="<?php the_field('image_suporte','option'); ?>">
 
-		<p class="sub-tit center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod eget mi ullam euismod eget mi att<br>lobortis Quisque ullamcorper felis vestibulum dictum amet, consectetur adipiscinullam. <a href="javascript:" title="Leia mais">Leia mais</a></p>
+		<p class="sub-tit center">
+			<?php the_field('texto_suporte','option'); ?>
+			<a href="javascript:" title="Leia mais">Leia mais</a></p>
 
-		<a href="javascript:" title="Solicite Ajuda" class="button ajuda"><span>Solicite Ajuda</span></a>
+		<a href="<?php echo get_home_url(); ?>/contato" title="Solicite Ajuda" class="button ajuda"><span>Solicite Ajuda</span></a>
 
 	</div>
 </section>
 
-<section class="box-content box-sistemas cinza" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/images/sistemas/bg_suporte.jpg');">
-	<div class="container">
+<section class="box-content box-sistemas cinza">
+	<?php /*<div class="container">
 		
 		<h2>Sistemas</h2>
 		<p class="sub-tit center">Lorem ipsum dolor sit amet, consectetur adipiscing Nullam euismod eget mi ullam euismod eget mi att rtisisque ullamcorper felis vestibul.</p>
 
 		<a href="javascript:" title="Clique Aqui" class="button btn-sistemas"><span>Clique Aqui</span></a>
 
-	</div>
+		
+
+	</div>*/ ?>
+
+	<a href="<?php the_field('link_sistema_home','option'); ?>" title="" class=""><img src="<?php the_field('img_sistema_home','option'); ?>" class="img-home-sistemas"></a>
 </section>
 
 <section class="box-content box-blog cinza">

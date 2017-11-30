@@ -50,7 +50,8 @@
 				img {
 					max-width: 210px;
 					max-height: 210px;
-					display: table-cell;
+					//display: table-cell;
+					display: contents;
 					vertical-align: middle;
 				}
 			}

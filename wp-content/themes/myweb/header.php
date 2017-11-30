@@ -1,3 +1,14 @@
+<?php session_start(); //unset($_SESSION['favoritos']); ?>
+
+<?php
+	/*if(isset($_SESSION['favoritos'])){
+		$favoritos_equipamentos = $_SESSION['favoritos']['equipamentos'];
+		$favoritos_sistemas = $_SESSION['favoritos']['sistemas'];
+		echo 'Equipamentos = '.count($favoritos_equipamentos);
+		echo '<br>Sistemas = '.count($favoritos_sistemas);
+	}*/
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -106,7 +117,7 @@
 			alert();
 		});
 
-		if(jQuery('body').height() <= jQuery(window).height()){
+		if(jQuery('body').height() < jQuery(window).height()){
 			jQuery('.footer').css({position: 'absolute', bottom: '0px'});
 		}else{
 			jQuery('.footer').css({position: 'relative'});
@@ -154,7 +165,32 @@
 				<nav class="nav">
 					<ul class="menu-principal">
 						<li class="menu-equipamentos">
-							<a href="<?php echo get_home_url(); ?>/equipamentos" title="Equipamentos" class="">Equipamentos</a>
+							<a href="javascript:" title="Equipamentos" class="">Equipamentos</a>
+
+							<ul class="row">
+								<?php
+									$args = array(
+									    'taxonomy'      => 'equipamentos_taxonomy',
+									    'parent'        => 0,
+									    'orderby'       => 'name',
+									    'order'         => 'ASC',
+									    'hierarchical'  => 1,
+									    'pad_counts'    => true,
+									    'hide_empty'    => 0
+									);
+									$categories = get_categories( $args );
+									foreach ( $categories as $categoria ){ ?>
+
+										<li class="col-6">
+											<a href="<?php echo get_home_url().'/equipamentos/'.$categoria->slug; ?><?php //echo get_category_link($categoria->term_id); ?>" title="<?php echo $categoria->name; ?>">
+												<?php echo $categoria->name; ?>
+											</a>
+										</li>
+
+										<?php
+									}
+								?>
+							</ul>
 						</li>
 
 						<li class="menu-sistemas">
@@ -180,9 +216,9 @@
 			<div class="info-header">
 				<div class="row">
 					<div class="col-6">
-						<form class="busca-header" action="javascript:">
+						<form class="busca-header searchform" role="search" method="get" id="searchform" action="<?php echo get_home_url(); ?>">
 							<fieldset>
-								<input type="text" name="busca" placeholder="Em que posso ajudá-lo?" />
+								<input value="" name="s" id="s" type="text" placeholder="Em que posso ajudá-lo?" />
 								<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
 							</fieldset>
 						</form>
@@ -196,10 +232,31 @@
 
 						<div class="orcamento-header">
 							<a href="javascript:" class="button orcamento" title="Solicite um Orçamento"><span>Solicite um Orçamento</span></a>
-							<span class="carrinho"></span>
+							<span class="carrinho" id="star-modal">
+								<?php
+									if(isset($_SESSION['favoritos'])){
+										if((isset($_SESSION['favoritos']['equipamentos'])) and (count($_SESSION['favoritos']['equipamentos']) > 0)){
+											$qtd_equipamentos = count($_SESSION['favoritos']['equipamentos']);
+										} 
+										if((isset($_SESSION['favoritos']['sistemas'])) and (count($_SESSION['favoritos']['sistemas']) > 0)){
+											$qtd_sistemas = count($_SESSION['favoritos']['sistemas']);
+										}
+
+										if(($qtd_equipamentos+$qtd_sistemas) > 0){ ?>
+											<em><?php echo $qtd_equipamentos+$qtd_sistemas; ?></em>
+										<?php }
+									}
+								?>
+							</span>
+
+							<?php if(get_field('aplicacao','option')){ ?>
+								<a href="<?php the_field('aplicacao','option'); ?>" class="aplicativo" target="_blank"></a>
+							<?php } ?>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
+
+	<?php //get_search_form(); ?>

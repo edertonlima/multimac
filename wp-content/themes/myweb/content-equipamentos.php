@@ -22,9 +22,9 @@
 				<div class="col-6">
 					<ul class="galeria-equipamento">
 						<li class="img-principal">
-							<?php $imagem = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
+							<?php $imagem_principal = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
 							<?php $imagem2 = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), '' ); ?>
-							<a href="<?php echo $imagem2[0]; ?>" class="fancybox" data-fancybox="galeria"><img src="<?php echo $imagem[0]; ?>"><i class="fa fa-search" aria-hidden="true"></i></a>
+							<a href="<?php echo $imagem2[0]; ?>" class="fancybox" data-fancybox="galeria"><img src="<?php echo $imagem_principal[0]; ?>"><i class="fa fa-search" aria-hidden="true"></i></a>
 						</li>
 						<?php 
 						$galeria = get_field('galeria');
@@ -45,7 +45,9 @@
 
 					<div class="botoes">
 						<a href="javascript:" title="Solicitar Orçamento" class="button comecar orcamento"><span>Solicitar Orçamento</span></a>
-						<a href="javascript:" title="Adicionar Favoritos" class="button comecar orcamento"><span><i class="fa fa-star-o" aria-hidden="true"></i> Adicionar Favoritos</span></a>
+						<a href="javascript:" title="Adicionar Favoritos" class="button comecar orcamento add-favorito" item-tipo="equipamentos" item-id="<?php echo $post->ID; ?>" item-nome="<?php the_title(); ?>" item-imagem="<?php echo $imagem_principal[0]; ?>">
+							<span><i class="fa fa-star-o" aria-hidden="true"></i> Adicionar Favoritos</span>
+						</a>
 					</div>
 				</div>
 

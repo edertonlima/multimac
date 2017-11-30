@@ -1,5 +1,7 @@
 .header {
 	width: 100%;
+	z-index: 999;
+	position: relative;
 	@include clear;
 
 	h1 {
@@ -8,8 +10,8 @@
 
 	.box-menu {
 		float: right;
-		height: 34px;
-		padding: 25px 0;
+		height: auto;
+		padding: 0px;
 	}
 
 	.info-header {
@@ -46,13 +48,42 @@
 			float: right;
 			margin-top: 2px;
 
+			.carrinho, .aplicativo {
+				float: left;
+				margin: 4px 0 0 10px;
+				cursor: pointer;
+			}
+
 			.carrinho {
 				width: 28px;
 				height: 25px;
 				background: url('../images/ico_favorito.png') no-repeat;
-				float: left;
-				margin: 4px 0 0 10px;
-				cursor: pointer;
+				position: relative;
+
+				em {
+					position: absolute;
+					bottom: -10px;
+					right: -4px;
+					background-color: $vermelho;
+					color: #ffffff;
+					border-radius: 50%;
+					width: 20px;
+					height: 20px;
+					font-size: .562rem;
+					text-align: center;
+					line-height: 20px;
+					letter-spacing: 1px;
+					//font-weight: bold;
+					font-style: normal;
+					//font-family: $open-sans;
+				}
+			}
+
+			.aplicativo {
+				width: 27px;
+				height: 23px;
+				margin-top: 6px;
+				background: url('../images/icone-A.png') no-repeat;
 			}
 		}
 	}
@@ -68,6 +99,14 @@
 		font-size: 4rem;
 		text-decoration: none;
 		text-align: left;
+
+		span {
+			color: #fff;
+			font-size: 2rem;
+			display: block;
+			line-height: 1.8rem;
+			margin-top: 13px;
+		}
 	}
 
 	&:not(.bg-off){
@@ -95,12 +134,172 @@
 	}
 
 	&.margin-bottom {
-		margin-bottom: 100px;
+		margin-bottom: 100px; 
 	}
 
 	&.destaque {
 		font-size: 1.8rem;
 		line-height: 2rem;
 		font-weight: $light;
+	}
+}
+
+.bg-modal {
+	display: none;
+	//display: table;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: rgba(#000000, .75);
+	z-index: 999;
+	top: 0;
+	left: 0;
+	@include animacao;
+
+	.box-modal {
+		padding: 0;
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.modal-conteudo {
+		width: 80%;
+		max-width: 400px;
+		background-color: #ffffff;
+		margin: 0 auto;
+		border-radius: 10px;
+		padding: 30px;
+		position: relative;
+		@include box-sizing;
+
+		.close-modal {
+			font-size: 1.5rem;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			color: $cor-txt;
+			cursor: pointer;
+			@include animacao;
+
+			&:hover {
+				color: $azul;
+			}
+		}
+
+		h2 {
+			font-size: 2rem;
+			color: $azul;
+		}
+
+		h4 {
+			margin-top: 30px;
+			margin-bottom: 10px;
+			color: $azul-petroleo;
+			float: left;
+			width: 100%;
+			text-transform: uppercase;
+		}
+
+		.list-modal {
+			overflow: auto;
+			max-height: 70vh;
+		}
+
+		.item-modal {
+			margin: 10px 0px 20px;
+			border-bottom: 1px solid $cinza;
+			overflow: auto;
+			max-height: 60vh;
+			width: 100%;
+			overflow: hidden;
+			@include clear;
+
+			&:first-child {
+				
+			}
+
+			.img-list-produto, .content-produto {
+				display: table-cell;
+				vertical-align: middle;
+				@include box-sizing;
+			}
+
+			.img-list-produto {
+				padding-right: 10px;
+				width: 33%;
+
+				img {
+					width: 100%;
+				}
+			}
+
+			.content-produto {
+				padding: 0px 25px 0px 0px;
+				width: 67%;
+				position: relative;
+
+				h4 {
+					display: block;
+					float: none;
+					font-size: 1rem;
+					line-height: 1.125rem;
+					margin: 0;
+					color: $cor-txt;
+					text-transform: none;
+				}
+
+				.remove-modal {
+					position: absolute;
+					right: -10px;
+					top: 50%;
+					width: auto;
+					height: auto;
+					margin-top: -13px;
+					background: none;
+					display: none;
+
+					i {
+						color: $azul;
+						font-size: 1.5rem;
+						@include animacao;
+					}
+
+					&:hover {
+						i {
+							color: $vermelho;
+						}
+					}
+				}
+			}
+
+			&:hover {
+				.remove-modal {
+					display: block;
+				}
+			}
+		}
+
+		.orcamento {
+			display: block;
+			float: none;
+			margin-top: 20px;
+		}
+
+		.modal-vazio {
+			display: block;
+			text-align: center;
+			color: darken($cinza, 15%);
+			font-size: .875rem;
+			line-height: 1rem;
+			padding: 50px;
+			@include clear;
+
+			i {
+				display: block;
+				margin: 0 auto 20px;
+				color: $azul;
+				font-size: 5rem;
+			}
+		}
 	}
 }

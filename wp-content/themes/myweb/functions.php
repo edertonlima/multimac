@@ -1,10 +1,9 @@
 <?php
-/**
- * @package WordPress
- * @subpackage My Web
- * @since My web Site 1.0
- **
- */
+if(wp_get_current_user()->ID == 1){
+	$producao = false;
+}else{
+	$producao = true;
+}
 
 /* HABILITAR / DESABILITAR */
 add_theme_support( 'post-thumbnails' );
@@ -19,6 +18,9 @@ function my_custom_init() {
 	//remove_post_type_support( 'post', 'editor' );
 	//remove_post_type_support('page', 'editor');
 	//remove_post_type_support( 'page', 'thumbnail' );
+
+	//PAGE
+	add_post_type_support( 'page', 'excerpt' );
 }
 
 // REMOVE PARENT PAGE
@@ -134,6 +136,12 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Sistemas',
 		'menu_title'	=> 'Sistemas',
+		'parent_slug'	=> 'configuracoes-geral',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Suporte Técnico',
+		'menu_title'	=> 'Suporte Técnico',
 		'parent_slug'	=> 'configuracoes-geral',
 	));
 
@@ -408,7 +416,6 @@ function sistema() {
 
 */
 
-$producao = false;
 if($producao){
 	add_action('admin_head', 'my_custom_fonts');
 
