@@ -271,7 +271,7 @@
 			@include box-sizing;
 
 			.item {
-				width: 100px !important;
+				width: 130px !important;
 				box-sizing: content-box;
 
 				a {
@@ -280,7 +280,7 @@
 					img {
 						width: 100%;
 						display: block;
-						margin: 0 auto 10px;
+						margin: 0 auto 0px;
 					}
 
 					span {

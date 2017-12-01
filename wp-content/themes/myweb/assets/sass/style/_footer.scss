@@ -93,3 +93,31 @@
 		}
 	}
 }
+
+#newsletter {
+	margin-top: 15px;
+
+	fieldset {
+		margin: 0;
+
+		&.erro {
+			input {
+				&::-webkit-input-placeholder {
+					color: #ffffff!important;
+				}
+
+				&:-moz-placeholder {
+					color: #ffffff!important; 
+				}
+
+				&::-moz-placeholder {
+					color: #ffffff!important;
+				}
+
+				&:-ms-input-placeholder {  
+					color: #ffffff!important;
+				}
+			}
+		}
+	}
+}

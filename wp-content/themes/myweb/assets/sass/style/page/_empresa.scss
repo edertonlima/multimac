@@ -67,4 +67,17 @@
 			}
 		}
 	}
+
+	.perguntas {
+		margin-top: 20px;
+
+		h2 {
+		    font-size: 2rem;
+		    margin-bottom: 10px;
+		    line-height: 2rem;
+		    margin-top: 50px;
+		    border-bottom: 1px solid $azul-petroleo;
+		    padding-bottom: 15px; 
+		}
+	}
 }

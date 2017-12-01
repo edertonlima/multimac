@@ -22,8 +22,9 @@
 		if($value->post_type == 'page'){
 			$page[] = $value;
 		}
-
 	}
+
+	//var_dump($search);
 ?>
 
 <?php get_header(); ?>

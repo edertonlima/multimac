@@ -240,6 +240,28 @@ form {
 			padding-bottom: 20px;
 			display: block;
 		}
+
+		&.erro {
+			input, textarea {
+				border-color: $vermelho!important;
+
+				&::-webkit-input-placeholder {
+					color: $vermelho!important;
+				}
+
+				&:-moz-placeholder {
+					color: $vermelho!important; 
+				}
+
+				&::-moz-placeholder {
+					color: $vermelho!important;
+				}
+
+				&:-ms-input-placeholder {  
+					color: $vermelho!important;
+				}
+			}
+		}
 	}
 
 	&.busca-header {

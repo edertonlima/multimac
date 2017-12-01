@@ -20,17 +20,14 @@
 	$headers .= "Reply-To: $nome <$email>\n";
 
 	$conteudo = '
-	<h2>Olá, uma nova mensagem foi enviada através do site.</h2>
-	<p>Confira abaixo, todos os dados preenchidos no formulário da área "Contato":</p>';
+	<h2>Olá, um novo cadastro para newsletter foi enviado através do site.</h2>';
 
 	$conteudo .= '<p>';
 	$conteudo .= '<strong>Nome:</strong> '.$nome;
 	$conteudo .= '<br><strong>E-mail:</strong> '.$email;
-	$conteudo .= '<br><strong>Telefone:</strong> '.$telefone;
-	$conteudo .= '<br><br><strong>Mensagem:</strong><br> '.$mensagem;
 	$conteudo .= '</p>';
-	if(mail($para, "Contato, Fale Conosco", $conteudo, $headers, "-f$email_remetente")){
-		mail('edertton@gmail.com', "Contato, Fale Conosco", $conteudo, $headers, "-f$email_remetente");
+	if(mail($para, "Newsletter, Site Multimac", $conteudo, $headers, "-f$email_remetente")){
+		mail('edertton@gmail.com', "Newsletter, Site Multimac", $conteudo, $headers, "-f$email_remetente");
 		//mail('pablo@di20.com.br', "Contato, Fale Conosco", $conteudo, $headers, "-f$email_remetente");
 		echo(json_encode('ok'));
 	}else{

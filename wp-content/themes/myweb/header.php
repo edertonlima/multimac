@@ -226,12 +226,23 @@
 
 					<div class="col-6">
 						<div class="contato-header">
-							<span class="tel"><i class="fa fa-phone" aria-hidden="true"></i> 14 3879-8010</span>
-							<span class="tel"><i class="fa fa-whatsapp" aria-hidden="true"></i> 14 99710-6385</span>
+							<?php
+								if(get_field('telefone','option')){ ?>
+									<span class="tel"><i class="fa fa-phone" aria-hidden="true"></i><?php the_field('telefone','option'); ?></span>
+								<?php }
+
+								if(get_field('celular','option')){ ?>
+									<span class="tel"><i class="fa fa-mobile" aria-hidden="true"></i><?php the_field('celular','option'); ?></span>
+								<?php }
+
+								if(get_field('whatsapp','option')){ ?>
+									<span class="tel"><i class="fa fa-whatsapp" aria-hidden="true"></i><?php the_field('whatsapp','option'); ?></span>
+								<?php }
+							?>
 						</div>
 
 						<div class="orcamento-header">
-							<a href="javascript:" class="button orcamento" title="Solicite um Orçamento"><span>Solicite um Orçamento</span></a>
+							<a href="javascript:" class="button orcamento modal-orcamento-geral" title="Solicite um Orçamento"><span>Solicite um Orçamento</span></a>
 							<span class="carrinho" id="star-modal">
 								<?php
 									if(isset($_SESSION['favoritos'])){

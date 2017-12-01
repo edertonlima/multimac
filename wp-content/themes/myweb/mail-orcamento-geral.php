@@ -2,9 +2,8 @@
 
 	$nome = $_GET['nome'];
 	$email = $_GET['email'];
-	$telefone = $_GET['telefone'];
 	$empresa = $_GET['empresa'];
-	$email = $_GET['email'];
+	$telefone = $_GET['telefone'];
 	$mensagem = $_GET['mensagem'];
 
 	$nome_site = $_GET['nome_site'];
@@ -20,18 +19,18 @@
 	$headers .= "Reply-To: $nome <$email>\n";
 
 	$conteudo = '
-	<h2>Olá, uma nova mensagem foi enviada através do site.</h2>
-	<p>Confira abaixo, todos os dados preenchidos no formulário da área "Contato":</p>';
+	<h2>Olá, uma nova solicitação de orçamento foi feito através do site.</h2>
+	<p>Confira abaixo, todos os dados preenchidos no formulário de solicitação:</p>';
 
 	$conteudo .= '<p>';
 	$conteudo .= '<strong>Nome:</strong> '.$nome;
 	$conteudo .= '<br><strong>E-mail:</strong> '.$email;
 	$conteudo .= '<br><strong>Telefone:</strong> '.$telefone;
-	$conteudo .= '<br><br><strong>Mensagem:</strong><br> '.$mensagem;
+	$conteudo .= '<br><strong>Empresa:</strong> '.$empresa;
+	$conteudo .= '<br><br><strong>Orçamento:</strong><br>'.$mensagem;
 	$conteudo .= '</p>';
-	if(mail($para, "Contato, Fale Conosco", $conteudo, $headers, "-f$email_remetente")){
-		mail('edertton@gmail.com', "Contato, Fale Conosco", $conteudo, $headers, "-f$email_remetente");
-		//mail('pablo@di20.com.br', "Contato, Fale Conosco", $conteudo, $headers, "-f$email_remetente");
+	if(mail($para, "Orçamento, Site Multimac", $conteudo, $headers, "-f$email_remetente")){
+		mail('edertton@gmail.com', "Orçamento, Site Multimac", $conteudo, $headers, "-f$email_remetente");
 		echo(json_encode('ok'));
 	}else{
 		echo(json_encode("Desculpe, não foi possível enviar seu formulário. <br>Por favor, tente novamente mais tarde."));

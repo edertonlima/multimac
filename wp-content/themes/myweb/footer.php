@@ -12,46 +12,82 @@
 						<li><a href="<?php echo get_home_url(); ?>/sistemas" title="Sistemas" class="">Sistemas</a></li>
 					</ul>
 				</div>
-				<div class="col-3">
-					<div class="box-footer">
-						<strong>Horário de atendimento</strong>
-						Seg. à Sex.   08h às 18h
-					</div>
+				<div class="<?php if(get_field('email-newsletter','option')){ echo 'col-3'; }else{echo 'col-6'; } ?>">
+					<?php if(get_field('horario_atendimento','option')){ ?>
+						<div class="box-footer">
+							<strong>Horário de atendimento</strong>
+							<?php the_field('horario_atendimento','option'); ?>
+						</div>
+					<?php } ?>
 
 					<div class="box-footer">
-						<strong>Perguntas Frequentes</strong>
-						<ul>
-							<li><a href="#" title="Como ficar de acordo">Como fica de acordo com a legislação?</a></li>
-							<li><a href="#" title="Como ficar de acordo">Como fica de acordo com a legislação?</a></li>
-						</ul>
+
+						<?php if( have_rows('perguntas',get_page_by_path('perguntas-frequentes')->ID) ):
+							$pergunta = 0; ?>								
+							<strong>Perguntas Frequentes</strong>
+							<ul>								
+								<?php while ( have_rows('perguntas',get_page_by_path('perguntas-frequentes')->ID) ) : the_row(); 
+									$pergunta = $pergunta+1;
+									if($pergunta < 4){ ?>
+										<li><a href="<?php echo get_home_url(); ?>/perguntas-frequentes/" title="<?php the_sub_field('pergunta'); ?>">
+											<?php the_sub_field('pergunta'); ?>
+										</a></li>	
+									<?php }
+								endwhile; ?>
+							</ul>
+						<?php endif; ?>
+
 					</div>
 				</div>
-				<div class="col-3">
-					<div class="box-footer">
-						<strong>Newsletter</strong>
-						Cadastre-se e receba as novidades do mundo da Automação Comercial
+
+				<?php if(get_field('email-newsletter','option')){ ?>
+					<div class="col-3">
+						<div class="box-footer">
+							<strong>Newsletter</strong>
+							<?php the_field('texto-newsletter','option'); ?>
+						</div>
+						<form id="newsletter">
+							<fieldset>
+								<input type="type" id="newsletter_nome" name="newsletter_nome" placeholder="Nome">
+							</fieldset>
+
+							<fieldset>
+								<input type="type" id="newsletter_email" name="newsletter_email" placeholder="Email">
+							</fieldset>
+							<button type="submit" class="cadastro-news">Finalizar Cadastro</button>
+						</form>
 					</div>
-					<form action="#" method="post">
-						<fieldset>
-							<input type="type" name="nome" placeholder="Nome">
-							<input type="type" name="email" placeholder="Email">
-						</fieldset>
-						<button type="button" class="cadastro-news">Finalizar Cadastro</button>
-					</form>
-				</div>
+				<?php } ?>
+
 				<div class="col-4">
 					<strong>Fale Conosco</strong>
 					<div class="contato-footer">
-						<span class="tel"><i class="fa fa-phone" aria-hidden="true"></i> 14 3879-8010</span>
-						<span class="tel"><i class="fa fa-whatsapp" aria-hidden="true"></i> 14 99710-6385</span>
-						<span class="tel email">contato@multimac.com.br</span>
+						<?php
+							if(get_field('telefone','option')){ ?>
+								<span class="tel"><i class="fa fa-phone" aria-hidden="true"></i> <?php the_field('telefone','option'); ?></span>
+							<?php }
+
+							if(get_field('celular','option')){ ?>
+								<span class="tel"><i class="fa fa-mobile" aria-hidden="true"></i> <?php the_field('celular','option'); ?></span>
+							<?php }
+
+							if(get_field('whatsapp','option')){ ?>
+								<span class="tel"><i class="fa fa-whatsapp" aria-hidden="true"></i> <?php the_field('whatsapp','option'); ?></span>
+							<?php }
+
+							if(get_field('email','option')){ ?>
+								<span class="tel email"> <?php the_field('email','option'); ?></span>
+							<?php }
+						?>						
 					</div>
 
-					<div class="fb-page" 
-					data-href="https://www.facebook.com/facebook"
-					data-width="380" 
-					data-hide-cover="false"
-					data-show-facepile="false"></div>
+					<?php if(get_field('user_facebook','option')){ ?>
+						<div class="fb-page" 
+						data-href="https://www.facebook.com/<?php the_field('user_facebook','option'); ?>"
+						data-width="380" 
+						data-hide-cover="false"
+						data-show-facepile="false"></div>
+					<?php } ?>
 
 				</div>				
 			</div>
@@ -159,6 +195,56 @@
 		</div>
 	</div>
 
+	<div class="bg-modal" id="modal-ok">
+		<div class="box-modal">
+			<div class="modal-conteudo">
+
+				<i class="fa fa-times close-modal" aria-hidden="true"></i>
+				<h2>Obrigado!</h2>
+				<p class="msg center"></p>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="bg-modal" id="modal-orcamento">
+		<div class="box-modal">
+			<div class="modal-conteudo">
+
+				<i class="fa fa-times close-modal" aria-hidden="true"></i>
+				<h2>Solicitar Orçamento</h2>
+				<p class="msg center"></p>
+
+				<form class="contato" id="orcamento">
+					<fieldset>
+						<input type="text" name="nome_orcamento" id="nome_orcamento" placeholder="Nome *">
+					</fieldset>
+
+					<fieldset>
+						<input type="text" name="empresa_orcamento" id="empresa_orcamento" placeholder="Empresa">
+					</fieldset>
+
+					<fieldset>
+						<input type="text" name="email_orcamento" id="email_orcamento" placeholder="E-mail *">
+					</fieldset>
+
+					<fieldset>
+						<input type="text" class="telefone" name="telefone_orcamento" id="telefone_orcamento" placeholder="DDD + telefone *">
+					</fieldset>
+
+					<fieldset>
+						<textarea name="mensagem_orcamento" id="mensagem_orcamento" placeholder="Mensagem"></textarea>
+					</fieldset>
+
+					<fieldset>
+						<button class="button orcamento">ENVIAR</button>
+					</fieldset>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>
 
@@ -167,6 +253,10 @@
 	var equipamentos = <?php echo count($_SESSION['favoritos']['equipamentos']); ?>;
 
 	jQuery(document).ready(function(){
+		jQuery('.modal-orcamento-geral').click(function(){
+			jQuery('#modal-orcamento').css('display','table');
+		});
+
 		jQuery('.close-modal').click(function(){
 			jQuery(this).parents('.bg-modal').hide();
 			jQuery('.msg').html('');
@@ -282,6 +372,108 @@
 		});
 	});
 
+	jQuery('form#orcamento').submit(function(event){
+		jQuery('form#orcamento .orcamento').html('ENVIANDO').prop( "disabled", true );
+		jQuery('#modal-orcamento .msg').removeClass('erro ok').html('');
+		var nome = jQuery('#nome_orcamento').val();
+		var empresa = jQuery('#empresa_orcamento').val();
+		var email = jQuery('#email_orcamento').val();
+		var telefone = jQuery('#telefone_orcamento').val();
+		var mensagem = jQuery('#mensagem_orcamento').val();
+		var para = '<?php the_field('email', 'option'); ?>';
+		var nome_site = '<?php the_field('titulo', 'option'); ?>';
+
+		var enviar = true;
+		if(nome == ''){
+			jQuery('#nome_orcamento').parent().addClass('erro');
+			enviar = false;
+		}
+
+		if(email == ''){
+			jQuery('#email_orcamento').parent().addClass('erro');
+			enviar = false;
+		}
+
+		if(telefone == ''){
+			jQuery('#telefone_orcamento').parent().addClass('erro');
+			enviar = false;
+		}
+
+		if(enviar){
+			jQuery.getJSON("<?php echo get_template_directory_uri(); ?>/mail-orcamento-geral.php", { nome:nome, email:email, empresa: empresa, telefone:telefone, mensagem:mensagem, para:para, nome_site:nome_site }, function(result){		
+				if(result=='ok'){
+					resultado = 'Orçamento enviado com sucesso! Obrigado.';
+					classe = 'ok';
+				}else{
+					resultado = result;
+					classe = 'erro';
+				}
+				jQuery('#modal-orcamento .msg').addClass(classe).html(resultado);
+				jQuery('form#orcamento').trigger("reset");
+				jQuery('form#orcamento .orcamento').html('ENVIAR').prop( "disabled", false );
+			});
+		}else{
+			jQuery('#modal-orcamento .msg').addClass('erro').html('Todos os campos são obrigatórios.');
+			jQuery('form#orcamento .orcamento').html('ENVIAR').prop( "disabled", false );
+		}
+
+		return false;
+	});
+
+	jQuery('form#newsletter').submit(function(event){
+		jQuery('form#newsletter .cadastro-news').html('Enviando').prop( "disabled", true );
+		var nome = jQuery('#newsletter_nome').val();
+		var email = jQuery('#newsletter_email').val();
+		var para = '<?php the_field('email-newsletter', 'option'); ?>';
+		var nome_site = '<?php the_field('titulo', 'option'); ?>';
+
+		var enviar = true;
+		if(nome == ''){
+			jQuery('#newsletter_nome').parent().addClass('erro');
+			enviar = false;
+		}
+
+		if(email == ''){
+			jQuery('#newsletter_email').parent().addClass('erro');
+			enviar = false;
+		}
+
+		if(enviar){
+			jQuery.getJSON("<?php echo get_template_directory_uri(); ?>/mail-newsletter.php", { nome:nome, email:email, para:para, nome_site:nome_site }, function(result){		
+				if(result=='ok'){
+					resultado = 'E-mail cadastrado com sucesso.';
+					classe = 'ok';
+				}else{
+					resultado = result;
+					classe = 'erro';
+				}
+				jQuery('#modal-ok .msg').addClass(classe).html(resultado);
+				jQuery('#modal-ok').css('display','table');
+				jQuery('form#newsletter').trigger("reset");
+				jQuery('form#newsletter .cadastro-news').html('Finalizar Cadastro').prop( "disabled", false );
+			});
+		}else{
+			jQuery('#modal-erro .msg').addClass('erro').html('Todos os campos são obrigatórios.');
+			jQuery('#modal-erro').css('display','table');
+			jQuery('form#newsletter .cadastro-news').html('Finalizar Cadastro').prop( "disabled", false );
+		}
+
+		return false;
+	});
+
+	jQuery('input, textarea').change(function(){
+		if(jQuery(this).parent().hasClass('erro')){
+			jQuery(this).parent().removeClass('erro');
+		}
+	});
+
+</script>
+
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/maskedinput.js"></script>
+<script type="text/javascript">
+	jQuery(function($){
+	   jQuery(".telefone").mask("(99) 9999-9999?9");
+	});
 </script>
 
 

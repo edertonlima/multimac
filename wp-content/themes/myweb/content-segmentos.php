@@ -130,11 +130,10 @@
 
 			<h2>Suporte Técnico</h2>
 			<span class="subtitulo center margin-top-mini"><?php the_field('tit_ajuda_segmentos'); ?></span>
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/segmentos/img_suporte.png" alt="Suporte Técnico" class="img-suporte">
+			<img class="ico_suporte" src="<?php the_field('image_suporte','option'); ?>">
 
 			<div class="content-txt">
-				<p>Um dos nossos principais diferenciais é o suporte técnico altamente especializado. Que te dará o suporte total desde a implantação dos equipamentos e sistemas.</p>
-				<p>Temos sempre uma equipe preparada à sua disposição!</p>
+				<?php the_field('detalhe_suporte'); ?>
 			</div>
 
 			<div class="button-etapa">
