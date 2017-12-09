@@ -92,7 +92,8 @@
 	</div>
 </section>
 
-<section class="box-content box-sistemas cinza">
+<a href="<?php the_field('link_sistema_home','option'); ?>" title="" class="">
+<section class="box-content box-sistemas cinza" style="background-image: url('<?php the_field('img_sistema_home','option'); ?>');">
 	<?php /*<div class="container">
 		
 		<h2>Sistemas</h2>
@@ -104,8 +105,9 @@
 
 	</div>*/ ?>
 
-	<a href="<?php the_field('link_sistema_home','option'); ?>" title="" class=""><img src="<?php the_field('img_sistema_home','option'); ?>" class="img-home-sistemas"></a>
+	<!--<a href="<?php the_field('link_sistema_home','option'); ?>" title="" class=""><img src="<?php the_field('img_sistema_home','option'); ?>" class="img-home-sistemas"></a>-->
 </section>
+</a>
 
 <section class="box-content box-blog cinza">
 	<div class="container">

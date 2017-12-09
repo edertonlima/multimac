@@ -5,6 +5,10 @@
 		font-weight: $light;
 		margin-bottom: 40px;
 		text-align: left;
+
+		@media all and (max-width: 750px){
+			font-size: 3rem;
+		}
 	}
 
 	p {
@@ -29,6 +33,11 @@
 
 		li {
 			display: table-cell;
+
+			@media all and (max-width: 750px){
+				display: block;
+				margin: 0 auto 80px;
+			}
 
 			span {
 				display: block;

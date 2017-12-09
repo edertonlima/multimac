@@ -18,6 +18,15 @@
 			margin-left: 2px;
 			margin-right: 20px;
 		}
+
+		@media all and (max-width: 600px){
+			i {
+				font-size: 1.125rem;
+			}
+			span {
+				font-size: 1rem;
+			}
+		}
 	}
 
 	iframe {
@@ -37,5 +46,19 @@
 
 	form {
 		padding-bottom: 70px;
+	}
+
+	@media all and (max-width: 1000px){
+		.col-7, .col-5 {
+			width: 100%;
+			max-width: 600px;
+			float: none;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.mapa {
+			margin-bottom: 50px;
+		}
 	}
 }

@@ -4,6 +4,26 @@
 		padding: 7.5px;
 		width: 33.333%;
 
+		@media all and (max-width: 750px){
+			width: 50%;
+			max-width: 360px;
+
+			&:nth-child(3){
+				display: none;
+			}
+		}
+
+		@media all and (max-width: 500px){
+			width: 100%;
+			margin: 10px auto;
+			display: block;
+			float: none;
+
+			&:nth-child(3){
+				display: block;
+			}
+		}
+
 		img {
 			display: block;
 			width: 100%;
@@ -25,6 +45,11 @@
 					line-height: 2rem;
 					text-decoration: none;
 					@include animacao;
+
+					@media all and (max-width: 600px){
+						font-size: 1.275rem;
+						line-height: 1.5rem;
+					}
 
 					&:hover {
 						color: $azul-claro;

@@ -3,7 +3,7 @@
 	
 	li {
 		padding: 2.5px;
-		width: 25%;
+		width: 24%;
 		display: inline-block;
 		overflow: hidden;
 		@include box-sizing;
@@ -60,13 +60,41 @@
 			text-align: center;
 			min-height: 48px;
 		}
+
+		@media all and (max-width: 1000px){
+			width: 33%;
+		}
+
+		@media all and (max-width: 750px){
+			width: 50%;
+		}
+
+		@media all and (max-width: 450px){
+			width: 100%;
+		}
 	}
 }
 
 .seguimentos {
-
 	.passos, .button-inicio {
 		margin-bottom: 30px;
+
+		@media all and (max-width: 750px){
+			width: 100%!important;
+			text-align: center;
+
+			a {
+				float: none;
+			}
+
+			.itens {
+				li {
+					float: none !important;
+					margin-right: auto;
+					margin-left: auto;
+				}
+			}
+		}
 	}
 
 	.passos {
@@ -91,6 +119,7 @@
 				display: table;
 				float: left;
 				margin-bottom: 20px;
+				width: 33%;
 
 				img, span {
 					display: table-cell;
@@ -108,6 +137,7 @@
 					font-style: italic;
 					width: 170px;
 					vertical-align: middle;
+					text-align: left;
 				}
 			}
 		}
@@ -204,6 +234,10 @@
 							line-height: 1.2rem;
 							text-align: center;
 						}
+
+						@media all and (max-width: 600px){
+							margin: 0 20px 20px;
+						}
 					}
 
 					&.list-sistemas {
@@ -212,6 +246,14 @@
 						}
 					}
 				}
+
+				@media all and (max-width: 1000px){
+					.col-6 {
+						width: 100%;
+						margin-bottom: 70px;
+					}
+				}
+
 			}
 		}
 
@@ -248,6 +290,10 @@
 
 					&:last-child {
 						margin-right: 0px;
+					}
+
+					@media all and (max-width: 1000px){
+						margin: 0px 0 4px;
 					}
 				}
 			}

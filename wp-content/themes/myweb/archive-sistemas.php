@@ -44,7 +44,13 @@
 		navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
 		responsive: {
 			0: {
-				items: 1
+				items: 2
+			},
+			400: {
+				items: 2
+			},
+			500: {
+				items: 3
 			},
 			768: {
 				items: 4

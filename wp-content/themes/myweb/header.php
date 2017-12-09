@@ -109,32 +109,94 @@
 
 
 <script type="text/javascript">
+	//var width_document = 0;
 	jQuery.noConflict();
 
 	jQuery(document).ready(function(){
+		//width_document = jQuery(document).width();
 
-		jQuery('.menu-active').click(function(){
-			alert();
+		/*scroll_body = jQuery(window).scrollTop();}
+		if(scroll_body > 400){
+			jQuery('.header').addClass('scroll_menu');
+		}*/
+
+		
+		jQuery('.menu-equipamentos a').click(function(){
+			if(jQuery('.menu-mobile').hasClass('active')){ 
+				if(jQuery('.menu-equipamentos').hasClass('submenu-active')){
+					jQuery('.menu-equipamentos').removeClass('submenu-active');
+					jQuery('.menu-equipamentos').siblings().show();
+					jQuery('.menu-equipamentos a').siblings('ul').hide();
+				}else{
+					jQuery('.menu-equipamentos').addClass('submenu-active');
+					jQuery('.menu-equipamentos').siblings().hide();
+					jQuery('.menu-equipamentos a').siblings('ul').show();
+				}
+			}
 		});
 
-		if(jQuery('body').height() < jQuery(window).height()){
-			jQuery('.footer').css({position: 'absolute', bottom: '0px'});
-		}else{
-			jQuery('.footer').css({position: 'relative'});
-		}
+		
+		jQuery('#form-busca').click(function(){
+			if(jQuery(this).hasClass('active')){
+				jQuery(this).removeClass('active');
+				jQuery('#boxsearchform').removeAttr("style");
+			}else{
+				jQuery(this).addClass('active');
+				jQuery('#boxsearchform').css('display','table');
+			}
+		});
+		
 	});	
 
-	/*jQuery(window).resize(function(){
+	jQuery(window).resize(function(){
+
+		jQuery('#form-busca').removeClass('active');
+		jQuery('#boxsearchform').removeAttr("style");
+
 		jQuery('.menu-mobile').removeClass('active');
-		jQuery('.nav').css('left','100vw');
-		jQuery('.region').css('left','100vw');
-		jQuery('.info-tel').css('left','100vw');
+		jQuery('.header').removeClass('active');
+		jQuery('.nav').removeAttr("style");
+		jQuery('.nav ul ul').removeAttr("style");
+
+		jQuery('.menu-equipamentos').removeClass('submenu-active');
+		jQuery('.menu-equipamentos').siblings().show();
+		jQuery('.menu-equipamentos ul').hide();
+
 		if(jQuery('body').height() <= jQuery(window).height()){
 			jQuery('.footer').css({position: 'absolute', bottom: '0px'});
 		}else{
 			jQuery('.footer').css({position: 'relative'});
 		}
-	});*/
+	});
+
+	jQuery(window).load(function(){
+		jQuery('.menu-mobile').click(function(){
+			if(jQuery(this).hasClass('active')){
+				jQuery('.nav').css('top','-110vh');
+				jQuery(this).removeClass('active');
+				jQuery('.header').removeClass('active');
+			}else{
+				jQuery('.nav').css('top','0px');
+				jQuery(this).addClass('active');
+				jQuery('.header').addClass('active');
+			}
+		});
+
+		if(jQuery('body').height() <= jQuery(window).height()){
+			jQuery('.footer').css({position: 'absolute', bottom: '0px'});
+		}else{
+			jQuery('.footer').css({position: 'relative'});
+		}
+	});
+
+	jQuery(window).scroll(function(){
+		/*scroll_body = jQuery(window).scrollTop();
+		if(scroll_body > 400){
+			jQuery('.header').addClass('scroll_menu');
+		}else{
+			jQuery('.header').removeClass('scroll_menu');
+		}*/
+	});
 </script>
 
 </head>
@@ -161,10 +223,12 @@
 
 			<div class="box-menu">
 				<a href="javascript:" class="menu-mobile"><span><em>X</em></span></a>
+				<i class="fa fa-search" aria-hidden="true" id="form-busca"></i>
 
 				<nav class="nav">
 					<ul class="menu-principal">
 						<li class="menu-equipamentos">
+							<i class="fa fa-long-arrow-left" aria-hidden="true"></i>
 							<a href="javascript:" title="Equipamentos" class="">Equipamentos</a>
 
 							<ul class="row">
@@ -215,16 +279,18 @@
 
 			<div class="info-header">
 				<div class="row">
-					<div class="col-6">
-						<form class="busca-header searchform" role="search" method="get" id="searchform" action="<?php echo get_home_url(); ?>">
-							<fieldset>
-								<input value="" name="s" id="s" type="text" placeholder="Em que posso ajudá-lo?" />
-								<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-							</fieldset>
-						</form>
+					<div class="col-6 esquerda">
+						<div id="boxsearchform">
+							<form class="busca-header searchform" role="search" method="get" id="searchform" action="<?php echo get_home_url(); ?>">
+								<fieldset>
+									<input value="" name="s" id="s" type="text" placeholder="Em que posso ajudá-lo?" />
+									<button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+								</fieldset>
+							</form>
+						</div>
 					</div>
 
-					<div class="col-6">
+					<div class="col-6 direita">
 						<div class="contato-header">
 							<?php
 								if(get_field('telefone','option')){ ?>
@@ -260,7 +326,7 @@
 								?>
 							</span>
 
-							<?php if(get_field('aplicacao','option')){ ?>
+							<?php if(!get_field('aplicacao','option')){ ?>
 								<a href="<?php the_field('aplicacao','option'); ?>" class="aplicativo" target="_blank"></a>
 							<?php } ?>
 						</div>

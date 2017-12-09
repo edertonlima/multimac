@@ -23,13 +23,53 @@
 .sistemas {
 	.item-sistemas {
 
+		.content-sistemas {
+			@media all and (max-width: 1000px){
+				padding-left: 20px;
+				padding-right: 20px;
+
+				.indicados-button {
+					.col-6 {
+						width: 100%;
+
+						.owl-carousel.list-segmentos {
+							max-width: 500px;
+							margin: 0 auto;
+						}
+
+						.botoes {
+							width: auto;
+							margin: 50px auto 0;
+							overflow: hidden;
+							text-align: center;
+
+							a {
+								float: none;
+								display: inline-block;
+							}
+						}
+					}
+				}
+			}
+
+			@media all and (max-width: 600px){
+				.col-6 {
+					width: 100%;
+
+					p {
+						margin-bottom: 30px;
+					}
+				}
+			}
+		}
+
 		.box-content {
 			padding-bottom: 100px;
 		}
 
 		.title {
 			background-color: $azul;
-			padding: 10px 0 20px;
+			padding: 10px 40px 20px;
 			position: relative;
 
 			h2 {
@@ -38,6 +78,10 @@
 				font-weight: $bold;
 				font-size: 3.225rem;
 				line-height: 3.225rem;
+
+				@media all and (max-width: 600px){
+					font-size: 2rem;
+				}
 			}
 
 			.img-sistemas {
@@ -81,6 +125,10 @@
 			width: 100%;
 			margin-top: 100px;
 
+			@media all and (max-width: 600px){
+				text-align: center;
+			}
+
 			.orcamento {
 				width: auto;
 				max-width: none;
@@ -97,6 +145,10 @@
 
 				&:hover {
 					background-color: darken($azul-petroleo, 10%);
+				}
+
+				@media all and (max-width: 600px){
+					margin: 0 auto 5px!important;
 				}
 			}
 		}

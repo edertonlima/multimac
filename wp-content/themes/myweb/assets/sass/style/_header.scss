@@ -86,6 +86,57 @@
 				background: url('../images/icone-A.png') no-repeat;
 			}
 		}
+
+		@media all and (max-width: 1000px){
+			.esquerda {
+				width: 35%;
+			}
+			.direita {
+				width: 65%;
+			}
+		}
+
+		@media all and (max-width: 800px){
+			margin-left: -1%;
+			width: 102%;
+
+			.col-6 {
+				width: 100%;
+				padding: 0px;
+
+				&.direita {
+					padding: 0px 20px;
+				}
+			}
+
+			.orcamento-header {
+				width: auto;
+				text-align: center;
+
+				a, span {
+					float: none!important;
+					display: inline-block;
+					margin: 0 3px!important;
+				}
+
+				.orcamento {
+					line-height: 22px;
+					top: -7px;
+					position: relative;
+				}
+
+				span, .aplicativo {
+					position: relative;
+					top: 4px;
+				}
+			}
+		}
+
+		@media all and (max-width: 600px){
+			.contato-header {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -106,6 +157,22 @@
 			display: block;
 			line-height: 1.8rem;
 			margin-top: 13px;
+		}
+
+		@media all and (max-width: 1000px){
+			padding: 100px 0 20px;
+			font-size: 3rem;
+
+			span {
+				font-size: 1.5rem;
+				line-height: 1.225rem;
+			}
+		}
+
+		@media all and (max-width: 600px){
+			padding: 75px 0 20px;
+			font-size: 2rem;
+			line-height: 2rem;
 		}
 	}
 
@@ -141,6 +208,11 @@
 		font-size: 1.8rem;
 		line-height: 2rem;
 		font-weight: $light;
+	}
+
+	@media all and (max-width: 600px){
+		font-size: 1rem;
+		line-height: 1.225rem;
 	}
 }
 
@@ -310,5 +382,13 @@
 		height: 45px;
 		line-height: 45px;
 		margin-top: 0px;
+	}
+}
+
+@media all and (max-width: 1020px){
+	.header {
+		.container {
+			padding: 0 20px;
+		}
 	}
 }

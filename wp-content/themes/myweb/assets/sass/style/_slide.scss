@@ -1,11 +1,35 @@
 .slide {
 	height: $hSlide;
+
+	@media all and (max-width: 600px){
+		height: 30vh;
+	}
+
+	@media all and (max-width: 400px){
+		height: 25vh;
+	}
+
+	@media all and (max-width: 370px){
+		height: 20vh;
+	}
 	
 	.item {
 		padding: 0 10%;
 		height: $hSlide;
 		background-position: center;
 		background-size: cover;
+
+			@media all and (max-width: 600px){
+				height: 30vh;
+			}
+
+			@media all and (max-width: 400px){
+				height: 25vh;
+			}
+
+			@media all and (max-width: 370px){
+				height: 20vh;
+			}
 
 		.container-slide {
 			float: left;

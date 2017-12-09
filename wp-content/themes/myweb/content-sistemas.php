@@ -10,7 +10,7 @@
 		</div>
 	</div>
 
-	<section class="box-content cinza">
+	<section class="box-content cinza content-sistemas">
 		<div class="container">
 			<div class="row">
 				
@@ -36,7 +36,7 @@
 				</div>
 
 			</div>
-			<div class="row">
+			<div class="row indicados-button">
 
 				<div class="col-6">
 					<div class="list-segmentos">

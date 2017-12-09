@@ -33,9 +33,34 @@
 				}
 
 				p {
-					height: 65px;
+					height: 62px;
 					overflow: hidden;
 				}
+			}
+		}
+
+		@media all and (max-width: 1000px){
+			margin: 0 -15px;
+
+			.col-4 {
+				padding: 0 15px;
+			}
+		}
+
+		@media all and (max-width: 750px){
+			.col-4 {
+				width: 50%;
+			}
+		}
+
+		@media all and (max-width: 600px){
+			.col-4 {
+				width: 100%;
+				max-width: 360px;
+				float: none;
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
 			}
 		}
 	}
@@ -81,6 +106,7 @@
 			width: auto;
 			max-width: none;
 			padding: 0 25px;
+			margin-bottom: 10px;
 
 			span, i {
 				font-size: 1.125rem;
@@ -109,6 +135,7 @@
 
 				img {
 					display: block;
+					margin: 0 auto;
 				}
 
 				&:hover {
@@ -159,6 +186,17 @@
 			color: $azul-petroleo;
 			font-size: 1rem;
 			line-height: 1.225rem;
+		}
+	}
+
+	@media all and (max-width: 750px){
+		.col-6 {
+			width: 100%;
+		}
+
+		.galeria-equipamento {
+			margin-bottom: 50px;
+			overflow: hidden;
 		}
 	}
 }
